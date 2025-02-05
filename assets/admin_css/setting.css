@@ -1,0 +1,84 @@
+.setting .setting-content {
+    padding-top: 50px;
+}
+
+.setting-content .title {
+    display: flex;
+    align-items: center;
+    margin: 70px 0 10px 0 ;
+}
+
+.setting-content .title i {
+    position: relative;
+    height: 35px;
+    width: 35px;
+    background-color: var(--primary-color);
+    border-radius: 6px;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.setting-content .title .text {
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-left: 10px;
+}
+
+.edits{
+    padding: 50px;
+    background-color: var(--box3-color);
+    display: flex;
+    max-width: 1000px;
+    margin: 50px auto;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 0 5px
+}
+
+.input{
+    display: flex;
+    padding: 5px;
+    width: 100%;
+    color: var(--text-color);
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.input label{
+    font-weight: bolder;
+    font-size: large;
+}
+
+.input input{
+    background: none;
+    outline: none;
+    border: none;
+    border-bottom: 4px solid;
+    font-size: medium;
+    color: var(--text-color);
+    font-weight: bold;
+    width: fit-content;
+}
+
+.input button{
+    background-color: var(--primary-color);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.input a{
+    color: var(--light-black-color);
+    transition: all .5s ease;
+}
+
+.input a:hover{
+    color: var(--primary-color);
+}
