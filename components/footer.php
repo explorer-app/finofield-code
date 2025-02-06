@@ -13,7 +13,8 @@
                                     </div>
                                     <div class="footer-tittle">
                                         <div class="footer-pera">
-                                            <p>The automated process starts as soon as your clothes go into the machine.
+                                            <p>Offers wide range of services especially to 
+                                            startups who is looking forward to doing business in India.
                                             </p>
                                         </div>
                                     </div>
@@ -31,11 +32,12 @@
                                 <div class="footer-tittle">
                                     <h4>Our solutions</h4>
                                     <ul>
-                                        <li><a href="#">Design & creatives</a></li>
-                                        <li><a href="#">Telecommunication</a></li>
-                                        <li><a href="#">Restaurant</a></li>
-                                        <li><a href="#">Programing</a></li>
-                                        <li><a href="#">Architecture</a></li>
+                                        <li><a href="#">Setting up Legal Entity</a></li>
+                                        <li><a href="#">Tax & Regulatory Advisory & Compliance</a></li>
+                                        <li><a href="#">Accounting/book-keeping & Financial reporting</a></li>
+                                        <li><a href="#">IFRS conversion</a></li>
+                                        <li><a href="#">Representation before various regulators </a></li>
+                                        <li><a href="#">Others</a></li>
                                     </ul>
                                 </div>
                             </div>

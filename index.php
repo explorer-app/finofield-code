@@ -41,8 +41,8 @@
                         <div class="hero-caption">
                             <span>Best Service</span>
                             <h1 data-animation="fadeInLeft" data-delay=".4s">Business Consulting</h1>
-                            <p data-animation="fadeInLeft" data-delay=".6s">The automated process starts as soon as
-                                your clothes go into the machine.</p>
+                            <p data-animation="fadeInLeft" data-delay=".6s">Offers wide range of services especially to 
+                            startups who is looking forward to doing business in India.</p>
                             <!-- Hero Btn -->
                             <a href="#" class="btn" data-animation="fadeInLeft" data-delay=".9s">Explore Services</a>
                         </div>
@@ -131,18 +131,17 @@
                         <h2>Our<br>Philosophy</h2>
                     </div>
                     <div class="about-more">
-                        <p>The automated process starts as soon as
-                            your clothes go into the machine. Duis cursus, mi quis
-                            viverra ornare, eros dolor interdum nulla, ut commodo
-                            diam libero vitae erat. Aenean faucibus nibh et justo
-                            cursus id rutrum lorem imperdiet. Nunc ut sem vitae
-                            risus tristique posuere.</p>
-                        <p class="pera-bottom">Interdum nulla, ut commodo diam libero vitae erat.
-                            Aenean faucibus nibh et justo cursus id rutrum lorem
-                            imperdiet. Nunc ut sem vitae risus tristique posuere.</p>
+                        <p>FinoField aims to provide high-quality business advisory services in a time-efficient manner, 
+                            ensuring that startups and multinational companies can focus on their core business 
+                            while the firm handles compliance, financial, and regulatory matters.</p>
+                        <p class="pera-bottom">
+                            FinoField provides cost-effective business setup solutions while ensuring compliance 
+                            with Indian tax and regulatory frameworks. We offer expert guidance on business structuring,
+                            funding, and financial reporting, 
+                            along with end-to-end support for operations and government policy updates.</p>
                         <div class="footer-tittles">
-                            <p>CEO, Consulto</p>
-                            <h2>Capcilena Hanry</h2>
+                            <p>CEO, FinoField</p>
+                            <!-- <h2>Binod Gupta</h2> -->
                         </div>
                     </div>
                 </div>
@@ -153,10 +152,10 @@
         <div class="about-area2">
             <!-- left Contents -->
             <div class="about-details2">
-                <div class="right-caption2">
+            <div class="right-caption2">
                     <!-- Section Tittle -->
                     <div class="section-tittle mb-50">
-                        <h2>Creative solutions<br>from experts</h2>
+                        <h2>Why We ?</h2>
                     </div>
                     <!-- collapse-wrapper -->
                     <div class="collapse-wrapper">
@@ -167,15 +166,15 @@
                                     <h2 class="mb-0">
                                         <a href="#" class="btn-link collapsed" data-toggle="collapse"
                                             data-target="#collapseTwo" aria-expanded="false"
-                                            aria-controls="collapseTwo">Starts the automated process.</a>
+                                            aria-controls="collapseTwo">
+                                            What makes FinoField different from other business consultants?</a>
                                     </h2>
                                 </div>
                                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
                                     data-parent="#accordionExample">
                                     <div class="card-body">
-                                        The automated process starts as soon as
-                                        your clothes go into the machine. Duis cursus, mi
-                                        quis viverra ornare.
+                                        FinoField offers a one-stop solution for all essential business services, 
+                                        eliminating the need to hire multiple consultants and reducing overall costs.
                                     </div>
                                 </div>
                             </div>
@@ -184,16 +183,16 @@
                                 <div class="card-header" id="headingOne">
                                     <h2 class="mb-0">
                                         <a href="#" class="btn-link" data-toggle="collapse" data-target="#collapseOne"
-                                            aria-expanded="true" aria-controls="collapseOne">The automated process
-                                            starts.</a>
+                                            aria-expanded="true" aria-controls="collapseOne">
+                                            Why is a single-service provider better than multiple consultants?</a>
                                     </h2>
                                 </div>
                                 <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
                                     data-parent="#accordionExample">
                                     <div class="card-body">
-                                        The automated process starts as soon as
-                                        your clothes go into the machine. Duis cursus, mi
-                                        quis viverra ornare.
+                                        Managing different service providers can be expensive and complex. 
+                                        FinoField simplifies the process by handling everything under one roof, 
+                                        ensuring seamless operations.
                                     </div>
                                 </div>
                             </div>
@@ -203,15 +202,15 @@
                                     <h2 class="mb-0">
                                         <a href="#" class="btn-link collapsed" data-toggle="collapse"
                                             data-target="#collapseThree" aria-expanded="false"
-                                            aria-controls="collapseThree">Automated process starts.</a>
+                                            aria-controls="collapseThree">
+                                            How does FinoField help startups entering the Indian market?</a>
                                     </h2>
                                 </div>
                                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
                                     data-parent="#accordionExample">
                                     <div class="card-body">
-                                        The automated process starts as soon as
-                                        your clothes go into the machine. Duis cursus, mi
-                                        quis viverra ornare.
+                                        Startups often struggle with high consulting costs and operational challenges. 
+                                        FinoField acts as an extended team, providing expert guidance and cost-effective solutions.
                                     </div>
                                 </div>
                             </div>
@@ -221,15 +220,16 @@
                                     <h2 class="mb-0">
                                         <a href="#" class="btn-link collapsed" data-toggle="collapse"
                                             data-target="#collapseFoure" aria-expanded="false"
-                                            aria-controls="collapseFoure">Process the automated magic.</a>
+                                            aria-controls="collapseFoure">
+                                            Is FinoField suitable for established businesses as well?</a>
                                     </h2>
                                 </div>
                                 <div id="collapseFoure" class="collapse" aria-labelledby="headingfouree"
                                     data-parent="#accordionExample">
                                     <div class="card-body">
-                                        The automated process starts as soon as
-                                        your clothes go into the machine. Duis cursus, mi
-                                        quis viverra ornare.
+                                        Yes! While startups benefit the most, 
+                                        established businesses can also leverage our 
+                                        expertise to streamline operations and optimize costs.
                                     </div>
                                 </div>
                             </div>
@@ -313,11 +313,12 @@
         </section>
         <!--? Testimonial Area End -->
         <!-- Home Blog Start -->
-        <section class="home-blog section-padding40 fix">
+
+        <!-- <section class="home-blog section-padding40 fix">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="cl-xl-7 col-lg-8 col-md-10">
-                        <!-- Section Tittle -->
+                        
                         <div class="section-tittle text-center mb-70">
                             <span>Case studies</span>
                             <h2>Some great stuffs we have done</h2>
@@ -325,7 +326,7 @@
                     </div>
                 </div>
                 <div class="blog-active">
-                    <!-- Single -->
+                    
                     <div class="single-blogs">
                         <div class="blog-img">
                             <img src="assets/img/gallery/blogs1.png" alt="">
@@ -338,7 +339,7 @@
                             <span>Urban</span>
                         </div>
                     </div>
-                    <!-- Single -->
+                    
                     <div class="single-blogs">
                         <div class="blog-img">
                             <img src="assets/img/gallery/blogs2.png" alt="">
@@ -351,7 +352,7 @@
                             <span>Urban</span>
                         </div>
                     </div>
-                    <!-- Single -->
+                    
                     <div class="single-blogs">
                         <div class="blog-img">
                             <img src="assets/img/gallery/blogs3.png" alt="">
@@ -364,7 +365,7 @@
                             <span>Urban</span>
                         </div>
                     </div>
-                    <!-- Single -->
+                    
                     <div class="single-blogs">
                         <div class="blog-img">
                             <img src="assets/img/gallery/blogs2.png" alt="">
@@ -379,7 +380,8 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
+
         <!-- Home Blog End -->
         <!--? Office environment  Start-->
         <section class="office-environments section-bg2 section-padding40"
@@ -390,16 +392,18 @@
                         <div class="office-pera">
                             <div class="section-tittle">
                                 <h2 class="mb-30">Office <br>Environment</h2>
-                                <p>The automated process starts as soon as
-                                    your clothes go into the machine. Duis cursus, mi quis
-                                    viverra ornare, eros dolor interdum nulla, ut commodo
-                                    diam libero vitae erat. Aenean faucibus nibh et justo
-                                    cursus id rutrum lorem imperdiet. Nunc ut sem vitae
-                                    risus tristique posuere.</p>
+                                <p>FinoField Business Solutions LLP combines professionalism with efficiency, 
+                                    offering expert-driven business advisory, tax compliance, and regulatory services. 
+                                    With a team of management graduates, chartered accountants, and company secretaries, 
+                                    they ensure precision, compliance, and strategic problem-solving.</p>
 
-                                <p>Interdum nulla, ut commodo diam libero vitae erat.
-                                    Aenean faucibus nibh et justo cursus id rutrum lorem
-                                    imperdiet. Nunc ut sem vitae risus tristique posuere.</p>
+                                <p>At the same time, FinoField fosters a dynamic, 
+                                    startup-friendly culture that values collaboration, 
+                                    innovation, and teamwork. 
+                                    Employees work closely with clients, 
+                                    delivering personalized solutions with professionalism and integrity. 
+                                    This blend of structure and flexibility creates a productive, 
+                                    growth-oriented workspace.</p>
                             </div>
                         </div>
                     </div>
@@ -408,11 +412,12 @@
         </section>
         <!-- Office environment  End-->
         <!--? Team Ara Start -->
-        <section class="team-area section-padding40">
+
+        <!-- <section class="team-area section-padding40">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="cl-xl-7 col-lg-8 col-md-10">
-                        <!-- Section Tittle -->
+                        
                         <div class="section-tittle text-center mb-70">
                             <span>Experts</span>
                             <h2>Our consultents</h2>
@@ -437,7 +442,7 @@
                                 <h3><a href="#">Jacika Chouhan</a></h3>
                                 <p>Senior business consultant</p>
                             </div>
-                            <!-- Blog Social -->
+                            
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-4 col-sm-6">
@@ -457,7 +462,7 @@
                                 <h3><a href="#">Dirluba Jahan</a></h3>
                                 <p>Senior business consultant</p>
                             </div>
-                            <!-- Blog Social -->
+                            
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-4 col-sm-6">
@@ -477,7 +482,7 @@
                                 <h3><a href="#">Michel Frade</a></h3>
                                 <p>Senior business consultant</p>
                             </div>
-                            <!-- Blog Social -->
+                            
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-4 col-sm-6">
@@ -497,12 +502,13 @@
                                 <h3><a href="#">Kalisha Milano</a></h3>
                                 <p>Senior business consultant</p>
                             </div>
-                            <!-- Blog Social -->
+                            
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
+
         <!-- Team Ara End -->
         <!--? Want To work -->
         <section class="wantToWork-area section-bg2" data-background="assets/img/gallery/section_bg01.png">
@@ -512,14 +518,12 @@
                         <div class="col-xl-7 col-lg-7 col-md-12">
                             <div class="wantToWork-caption wantToWork-caption2">
                                 <h2>Need a consulting services?</h2>
-                                <p>The automated process starts as soon as your clothes go into the machine. Duis
-                                    cursus, mi quis viverra ornare, eros dolor interdum nulla.</p>
+                                <p>Launching a startup? Let us handle the hassles while you focus on growth!</p>
                             </div>
                         </div>
                         <div class="col-xl-4 col-lg-4 col-md-6">
                             <a href="#" class="btn w-btn wantToWork-btn mr-20">Make an Appointment</a>
-                            <a href="#" class="btn2 w-btn wantToWork-btn"><i class="fas fa-phone"></i> (89) 673
-                                378-309</a>
+                            <a href="#" class="btn2 w-btn wantToWork-btn"><i class="fas fa-phone"></i> 0120 6052793</a>
                         </div>
                     </div>
                 </div>

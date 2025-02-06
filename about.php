@@ -71,22 +71,23 @@
                 <div class="right-caption">
                     <!-- Section Tittle -->
                     <div class="section-tittle mb-50">
-                        <h2>Our<br>Philosophy</h2>
+                        <!-- <h2>Our<br>Philosophy</h2> -->
                     </div>
                     <div class="about-more">
-                        <p>The automated process starts as soon as
-                            your clothes go into the machine. Duis cursus, mi quis
-                            viverra ornare, eros dolor interdum nulla, ut commodo
-                            diam libero vitae erat. Aenean faucibus nibh et justo
-                            cursus id rutrum lorem imperdiet. Nunc ut sem vitae
-                            risus tristique posuere.</p>
-                        <p class="pera-bottom">Interdum nulla, ut commodo diam libero vitae erat.
-                            Aenean faucibus nibh et justo cursus id rutrum lorem
-                            imperdiet. Nunc ut sem vitae risus tristique posuere.</p>
-                        <div class="footer-tittles">
-                            <p>CEO, Consulto</p>
-                            <h2>Capcilena Hanry</h2>
-                        </div>
+                        <p><b>FinoField Business Solutions LLP</b> is Limited Liability Partnership firm (“FinoField”)
+                             established in 2020 with an objective to provide business advisory to its clients. 
+                             It offers wide range of services especially to startups 
+                            who is looking forward to doing business in India.</p>
+                        <p class="pera-bottom">Post liberalization of the Indian economy in the 90’s, 
+                            India has been one of the most preferred jurisdiction of foreign investors in various sectors.
+                             Various multinational companies have their presence here mainly utilizing the 
+                             benefit the energetic young work force by setting up cost centers. 
+                             The availability of skilled workforce has helped various multinational entitles to 
+                            optimize their efficiency resulting into increased focus on the main core business.</p>
+                        <!-- <div class="footer-tittles">
+                            <p>CEO, FinoField</p>
+                            <h2>Vinod Gupta</h2>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -96,87 +97,26 @@
         <div class="about-area2">
             <!-- left Contents -->
             <div class="about-details2">
-                <div class="right-caption2">
+            <div class="right-caption">
                     <!-- Section Tittle -->
                     <div class="section-tittle mb-50">
-                        <h2>Creative solutions<br>from experts</h2>
+                        <!-- <h2>Our<br>Philosophy</h2> -->
                     </div>
-                    <!-- collapse-wrapper -->
-                    <div class="collapse-wrapper">
-                        <div class="accordion" id="accordionExample">
-                            <!-- single-one -->
-                            <div class="card">
-                                <div class="card-header" id="headingTwo">
-                                    <h2 class="mb-0">
-                                        <a href="#" class="btn-link collapsed" data-toggle="collapse"
-                                            data-target="#collapseTwo" aria-expanded="false"
-                                            aria-controls="collapseTwo">Starts the automated process.</a>
-                                    </h2>
-                                </div>
-                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
-                                    data-parent="#accordionExample">
-                                    <div class="card-body">
-                                        The automated process starts as soon as
-                                        your clothes go into the machine. Duis cursus, mi
-                                        quis viverra ornare.
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- single-two -->
-                            <div class="card">
-                                <div class="card-header" id="headingOne">
-                                    <h2 class="mb-0">
-                                        <a href="#" class="btn-link" data-toggle="collapse" data-target="#collapseOne"
-                                            aria-expanded="true" aria-controls="collapseOne">The automated process
-                                            starts.</a>
-                                    </h2>
-                                </div>
-                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
-                                    data-parent="#accordionExample">
-                                    <div class="card-body">
-                                        The automated process starts as soon as
-                                        your clothes go into the machine. Duis cursus, mi
-                                        quis viverra ornare.
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- single-three -->
-                            <div class="card">
-                                <div class="card-header" id="headingThree">
-                                    <h2 class="mb-0">
-                                        <a href="#" class="btn-link collapsed" data-toggle="collapse"
-                                            data-target="#collapseThree" aria-expanded="false"
-                                            aria-controls="collapseThree">Automated process starts.</a>
-                                    </h2>
-                                </div>
-                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
-                                    data-parent="#accordionExample">
-                                    <div class="card-body">
-                                        The automated process starts as soon as
-                                        your clothes go into the machine. Duis cursus, mi
-                                        quis viverra ornare.
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- single-four -->
-                            <div class="card">
-                                <div class="card-header" id="headingfouree">
-                                    <h2 class="mb-0">
-                                        <a href="#" class="btn-link collapsed" data-toggle="collapse"
-                                            data-target="#collapseFoure" aria-expanded="false"
-                                            aria-controls="collapseFoure">Process the automated magic.</a>
-                                    </h2>
-                                </div>
-                                <div id="collapseFoure" class="collapse" aria-labelledby="headingfouree"
-                                    data-parent="#accordionExample">
-                                    <div class="card-body">
-                                        The automated process starts as soon as
-                                        your clothes go into the machine. Duis cursus, mi
-                                        quis viverra ornare.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="about-more">
+                        <p>At present, most of the entities across the globe has presence in India  in some form; 
+                            be it manufacturing in India, running cost centers, developing IT products, 
+                            selling goods manufactured in various parts of the globe.</p>
+                        <p class="pera-bottom">FinoField, established by a team professionals comprising Management Graduates, 
+                            Chartered Accountants & Company secretaries, focuses on serving investors create business presence in India. 
+                            It is a one stop firm which can help you establish your business starting from setting up
+                             entity to taking care of day-to-day accounting, taxation, regulatory issues, payroll services. 
+                             The aim is to align the path of startups/businesses in such a manner that the investor could focus 
+                             only on the core business and 
+                            rest everything would be taken care by the team members in a seamless manner.   </p>
+                        <!-- <div class="footer-tittles">
+                            <p>CEO, FinoField</p>
+                            <h2>Vinod Gupta</h2>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -200,14 +140,15 @@
         </div>
         <!-- About Area End-->
         <!--? Testimonial Area Start -->
-        <section class="testimonial-area testimonial-padding fix" data-background="assets/img/gallery/section_bg03.png">
+
+        <!-- <section class="testimonial-area testimonial-padding fix" data-background="assets/img/gallery/section_bg03.png">
             <div class="container">
                 <div class="row align-items-center justify-content-center">
                     <div class=" col-lg-9">
                         <div class="about-caption">
-                            <!-- Testimonial Start -->
+                            
                             <div class="h1-testimonial-active dot-style">
-                                <!-- Single Testimonial -->
+                                
                                 <div class="single-testimonial position-relative">
                                     <div class="testimonial-caption">
                                         <img src="assets/img/icon/quotes-sign.png" alt="" class="quotes-sign">
@@ -216,7 +157,7 @@
                                             ustomization possibilities. Pixel-perfect replica;ition of thei designers
                                             ijtls intended csents your se.</p>
                                     </div>
-                                    <!-- founder -->
+                                    
                                     <div class="testimonial-founder d-flex align-items-center">
                                         <div class="founder-img">
                                             <img src="assets/img/icon/testimonial.png" alt="">
@@ -227,7 +168,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- Single Testimonial -->
+                                
                                 <div class="single-testimonial position-relative">
                                     <div class="testimonial-caption">
                                         <img src="assets/img/icon/quotes-sign.png" alt="" class="quotes-sign">
@@ -236,7 +177,7 @@
                                             ustomization possibilities. Pixel-perfect replica;ition of thei designers
                                             ijtls intended csents your se.</p>
                                     </div>
-                                    <!-- founder -->
+                                    
                                     <div class="testimonial-founder d-flex align-items-center">
                                         <div class="founder-img">
                                             <img src="assets/img/icon/testimonial.png" alt="">
@@ -248,19 +189,21 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Testimonial End -->
+                            
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
+
         <!--? Testimonial Area End -->
         <!-- Home Blog Start -->
-        <section class="home-blog section-padding40 fix">
+
+        <!-- <section class="home-blog section-padding40 fix">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="cl-xl-7 col-lg-8 col-md-10">
-                        <!-- Section Tittle -->
+                        
                         <div class="section-tittle text-center mb-70">
                             <span>Case studies</span>
                             <h2>Some great stuffs we have done</h2>
@@ -268,7 +211,7 @@
                     </div>
                 </div>
                 <div class="blog-active">
-                    <!-- Single -->
+                    
                     <div class="single-blogs">
                         <div class="blog-img">
                             <img src="assets/img/gallery/blogs1.png" alt="">
@@ -281,7 +224,7 @@
                             <span>Urban</span>
                         </div>
                     </div>
-                    <!-- Single -->
+                    
                     <div class="single-blogs">
                         <div class="blog-img">
                             <img src="assets/img/gallery/blogs2.png" alt="">
@@ -294,7 +237,7 @@
                             <span>Urban</span>
                         </div>
                     </div>
-                    <!-- Single -->
+                    
                     <div class="single-blogs">
                         <div class="blog-img">
                             <img src="assets/img/gallery/blogs3.png" alt="">
@@ -307,7 +250,7 @@
                             <span>Urban</span>
                         </div>
                     </div>
-                    <!-- Single -->
+                    
                     <div class="single-blogs">
                         <div class="blog-img">
                             <img src="assets/img/gallery/blogs2.png" alt="">
@@ -322,10 +265,12 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
+
         <!-- Home Blog End -->
         <!--? Office environment  Start-->
-        <section class="office-environments section-bg2 section-padding40"
+
+        <!-- <section class="office-environments section-bg2 section-padding40"
             data-background="assets/img/gallery/section_bg02.png">
             <div class="container">
                 <div class="row">
@@ -348,14 +293,16 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
+
         <!-- Office environment  End-->
         <!--? Team Ara Start -->
-        <section class="team-area section-padding40">
+
+        <!-- <section class="team-area section-padding40">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="cl-xl-7 col-lg-8 col-md-10">
-                        <!-- Section Tittle -->
+                        
                         <div class="section-tittle text-center mb-70">
                             <span>Experts</span>
                             <h2>Our consultents</h2>
@@ -380,7 +327,7 @@
                                 <h3><a href="#">Jacika Chouhan</a></h3>
                                 <p>Senior business consultant</p>
                             </div>
-                            <!-- Blog Social -->
+                            
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-4 col-sm-6">
@@ -400,7 +347,7 @@
                                 <h3><a href="#">Dirluba Jahan</a></h3>
                                 <p>Senior business consultant</p>
                             </div>
-                            <!-- Blog Social -->
+                            
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-4 col-sm-6">
@@ -420,7 +367,7 @@
                                 <h3><a href="#">Michel Frade</a></h3>
                                 <p>Senior business consultant</p>
                             </div>
-                            <!-- Blog Social -->
+                            
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-4 col-sm-6">
@@ -440,12 +387,13 @@
                                 <h3><a href="#">Kalisha Milano</a></h3>
                                 <p>Senior business consultant</p>
                             </div>
-                            <!-- Blog Social -->
+                            
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
+
         <!-- Team Ara End -->
         <!--? Want To work -->
         <section class="wantToWork-area section-bg2" data-background="assets/img/gallery/section_bg01.png">
@@ -455,8 +403,7 @@
                         <div class="col-xl-7 col-lg-7 col-md-12">
                             <div class="wantToWork-caption wantToWork-caption2">
                                 <h2>Need a consulting services?</h2>
-                                <p>The automated process starts as soon as your clothes go into the machine. Duis
-                                    cursus, mi quis viverra ornare, eros dolor interdum nulla.</p>
+                                <p>Launching a startup? Let us handle the hassles while you focus on growth!</p>
                             </div>
                         </div>
                         <div class="col-xl-4 col-lg-4 col-md-6">

@@ -30,12 +30,7 @@
                                         <nav>
                                             <ul id="navigation">
                                                 <li><a href="index.php">Home</a></li>
-                                                <li><a href="#">Pages</a>
-                                                    <ul class="submenu">
-                                                        <li><a href="about.php">about</a></li>
-                                                        <li><a href="elements.html">Element</a></li>
-                                                    </ul>
-                                                </li>
+                                                <li><a href="about.php">About</a></li>
                                                 <li><a href="services.php">Services</a>
                                                     <ul class="submenu">
                                                         <li><a href="blog.php">1. </a></li>

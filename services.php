@@ -77,8 +77,9 @@
                             <div class="services-img">
                                 <img src="assets/img/gallery/team1.png" alt="">
                                 <div class="services-caption">
-                                    <h3><a href="#">Business consulting</a></h3>
-                                    <p>The automated process starts as soon <br>as your clothes go into the machine.</p>
+                                    <h3><a href="#">Setting up Legal Entity</a></h3>
+                                    <p>helps businesses choose the right legal entity in India, 
+                                        ensuring minimal compliance, cost efficiency, and regulatory ease.</p>
                                     <a href="#" class="btn btn3">Make Appointment</a>
                                 </div>
                             </div>
@@ -89,8 +90,10 @@
                             <div class="services-img">
                                 <img src="assets/img/gallery/team2.png" alt="">
                                 <div class="services-caption">
-                                    <h3><a href="#">Media planing</a></h3>
-                                    <p>The automated process starts as soon <br>as your clothes go into the machine.</p>
+                                    <h3><a href="#">Tax & Regulatory Advisory & Compliance</a></h3>
+                                    <p>seamless tax and regulatory compliance in India, 
+                                        helping businesses make tax-efficient decisions while minimizing 
+                                        regulatory intervention.</p>
                                     <a href="#" class="btn btn3">Make Appointment</a>
                                 </div>
                             </div>
@@ -101,8 +104,10 @@
                             <div class="services-img">
                                 <img src="assets/img/gallery/team3.png" alt="">
                                 <div class="services-caption">
-                                    <h3><a href="#">Professional HR</a></h3>
-                                    <p>The automated process starts as soon <br>as your clothes go into the machine.</p>
+                                    <h3><a href="#">Accounting/book-keeping & Financial reporting</a></h3>
+                                    <p>provides expert accounting and bookkeeping services, 
+                                        ensuring real-time financial tracking, 
+                                        cost efficiency, and seamless audit support for businesses.</p>
                                     <a href="#" class="btn btn3">Make Appointment</a>
                                 </div>
                             </div>
@@ -113,8 +118,10 @@
                             <div class="services-img">
                                 <img src="assets/img/gallery/team2.png" alt="">
                                 <div class="services-caption">
-                                    <h3><a href="#">Business consulting</a></h3>
-                                    <p>The automated process starts as soon <br>as your clothes go into the machine.</p>
+                                    <h3><a href="#">IFRS conversion</a></h3>
+                                    <p>assists businesses in seamlessly converting Indian financials to IFRS, 
+                                        ensuring smooth global consolidation and compliance 
+                                        with international reporting standards.</p>
                                     <a href="#" class="btn btn3">Make Appointment</a>
                                 </div>
                             </div>
@@ -125,8 +132,10 @@
                             <div class="services-img">
                                 <img src="assets/img/gallery/team1.png" alt="">
                                 <div class="services-caption">
-                                    <h3><a href="#">Media planing</a></h3>
-                                    <p>The automated process starts as soon <br>as your clothes go into the machine.</p>
+                                    <h3><a href="#">Representation before various regulators including tax authorities</a></h3>
+                                    <p>provides expert regulatory and tax assessment support, 
+                                        handling compliance disputes and legal matters 
+                                        at all levels to ensure business continuity.</p>
                                     <a href="#" class="btn btn3">Make Appointment</a>
                                 </div>
                             </div>
@@ -137,8 +146,11 @@
                             <div class="services-img">
                                 <img src="assets/img/gallery/team3.png" alt="">
                                 <div class="services-caption">
-                                    <h3><a href="#">Professional HR</a></h3>
-                                    <p>The automated process starts as soon <br>as your clothes go into the machine.</p>
+                                    <h3><a href="#">Others</a></h3>
+                                    <p>helps businesses leverage government incentives, policy benefits, 
+                                        and compliance services, 
+                                        ensuring maximum financial advantages and 
+                                        regulatory efficiency in India.</p>
                                     <a href="#" class="btn btn3">Make Appointment</a>
                                 </div>
                             </div>
@@ -157,8 +169,7 @@
                         <div class="col-xl-7 col-lg-7 col-md-12">
                             <div class="wantToWork-caption wantToWork-caption2">
                                 <h2>Need a consulting services?</h2>
-                                <p>The automated process starts as soon as your clothes go into the machine. Duis
-                                    cursus, mi quis viverra ornare, eros dolor interdum nulla.</p>
+                                <p>Launching a startup? Let us handle the hassles while you focus on growth!</p>
                             </div>
                         </div>
                         <div class="col-xl-4 col-lg-4 col-md-6">
