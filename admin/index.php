@@ -81,6 +81,12 @@
                 <div class="activity-data">
                     <div class="data names">
                         <span class="data-title">Name</span>
+                        <!-- dummy data -->
+                        <span class='data-list users-name'>Arjun Tripathi</span>
+                        <span class='data-list users-name'>Arjun Tripathi</span>
+                        <span class='data-list users-name'>Arjun Tripathi</span>
+                        <span class='data-list users-name'>Arjun Tripathi</span>
+                        <span class='data-list users-name'>Arjun Tripathi</span>
                         <?php
                          
                         //  for($i=0;$i<sizeof($data);$i++) {
@@ -91,6 +97,12 @@
 
                     <div class="data emails">
                         <span class="data-title">Email</span>
+                        <!-- dummy data -->
+                        <span class='data-list users-email'>arjun@gmail.com</span>
+                        <span class='data-list users-email'>arjun@gmail.com</span>
+                        <span class='data-list users-email'>arjun@gmail.com</span>
+                        <span class='data-list users-email'>arjun@gmail.com</span>
+                        <span class='data-list users-email'>arjun@gmail.com</span>
                         <?php
                          
                         //  for($i=0;$i<sizeof($data);$i++) {
@@ -101,6 +113,12 @@
 
                     <div class="data mobiles">
                         <span class="data-title">Phone</span>
+                        <!-- dummy data -->
+                        <span class='data-list users-phone'>+9179879879879878</span>
+                        <span class='data-list users-phone'>+9179879879879878</span>
+                        <span class='data-list users-phone'>+9179879879879878</span>
+                        <span class='data-list users-phone'>+9179879879879878</span>
+                        <span class='data-list users-phone'>+9179879879879878</span>
                         <?php
                          
                         //  for($i=0;$i<sizeof($data);$i++) {

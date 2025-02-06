@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Consulting | Template</title>
+    <title>FinoField | Blog</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="manifest" href="site.webmanifest">
@@ -381,7 +381,7 @@
         </section>
         <!-- Blog Area End -->
     </main>
-    <?php include('./components/header.php')?>
+    <?php include('./components/footer.php')?>
 
     <!-- Scroll Up -->
     <div id="back-top">

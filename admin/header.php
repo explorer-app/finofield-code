@@ -2,7 +2,7 @@
 // if(!isset($_SESSION['id']))
 //  header("location: ../index.php");
 
-//         include("./preloader.php"); 
+        include("./preloader.php"); 
 // ?>
 <nav>
         <div class="logo-name">
