@@ -45,16 +45,19 @@
                     <span class="text">Dashboard</span>
                 </div>
                 <div class="boxes">
+                    <a style="text-decoration: none" class="box box2" href="./blog_preview.php">
                     <div class="box box2">
-                        <i class="uil uil-plus"></i>
-                        <span class="text">Create Blog</span>
-                        <!-- <span class="number">11,216</span> -->
-                    </div>
-                </div>
+                            <i class="uil uil-plus"></i>
+                            <span class="text">Create Blog</span>
+                            <!-- <span class="number">11,216</span> -->
+                        </div>
+                    </a>
+                    
             </div>
             <div class="activity">
                 <div class="search-tools">
                     <div class="title">
+                        
                         <i class="uil uil-users-alt"></i>
                         <span class="text">All Avilable Blogs</span>
                     </div>
