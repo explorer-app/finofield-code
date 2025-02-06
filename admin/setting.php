@@ -1,8 +1,8 @@
 <?php 
-error_reporting(E_WARNING|E_NOTICE);
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+// error_reporting(E_WARNING|E_NOTICE);
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
 
  ?>
 
@@ -22,13 +22,13 @@ error_reporting(E_ALL);
 <body>
     <?php 
         include("./header.php");
-        include("../controllers/DatabaseController.php");
-        include("../models/UserModel.php");
+        // include("../controllers/DatabaseController.php");
+        // include("../models/UserModel.php");
 
-        $db = new DatabaseController();
-        $con = $db->getConnection();
-        $usermodel = new UserModel($con);
-        $data = $usermodel->getUrl();
+        // $db = new DatabaseController();
+        // $con = $db->getConnection();
+        // $usermodel = new UserModel($con);
+        // $data = $usermodel->getUrl();
         
     ?>
     <section class="panel setting">
@@ -52,24 +52,24 @@ error_reporting(E_ALL);
             <div class="activity">
                 <div class="title">
                     <i class="uil uil-edit"></i>
-                    <span class="text">Hi, <?= $_SESSION['name'];  ?> Edit your company details</span>
+                    <span class="text">Hi, <> Edit your company details</span>
                 </div>
                 <form class="edits" action="../controllers/AppController.php?action=setting" method="POST">
                     <div class="input">
                         <label for="">Campany facebook URL :</label>
-                        <input type="text" value="<?= $data['facebook']; ?>" name="facebook">
+                        <input type="text" value='' name="facebook">
                     </div>
                     <div class="input">
                         <label for="">Campany LinkedIn URL :</label>
-                        <input type="text" value="<?= $data['linkedin']; ?>" name="linkedin">
+                        <input type="text" value="" name="linkedin">
                     </div>
                     <div class="input">
                         <label for="">Campany Twitter URL :</label>
-                        <input type="text" value="<?= $data['twitter']; ?>" name="twitter">
+                        <input type="text" value="" name="twitter">
                     </div>
                     <div class="input">
                         <label for="">Campany Whatapp Number :</label>
-                        <input type="text" value="<?= $data['whatsapp']; ?>" name="whatsapp">
+                        <input type="text" value="" name="whatsapp">
                     </div>
                     <div class="input" style="flex-direction: column; align-items: center; gap: 30px;">
                         <button type="submit">Submit</button>

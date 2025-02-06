@@ -30,17 +30,17 @@
                 </li>
 
                 <li>
-                    <a href="./clients.php" id="">
+                    <a href="./blogs.php" id="">
                         <i class="uil uil-file"></i>
                         <span class="link-name">Blogs</span>
                     </a>
                 </li>
-                <!-- <li>
+                <li>
                     <a href="./services.php" id="">
-                        <i class="uil uil-building"></i>
+                        <i class="uil uil-puzzle-piece"></i>
                         <span class="link-name">Services</span>
                     </a>
-                </li> -->
+                </li>
             </ul>
 
             <ul class="logout-mode">

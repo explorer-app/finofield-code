@@ -19,7 +19,7 @@
                             <!-- Logo -->
                             <div class="col-xl-2 col-lg-2 col-md-1">
                                 <div class="logo">
-                                    <a href="index.html"><img src="assets/img/logo/logo.png" class="logo-img" alt="">
+                                    <a href="./"><img src="assets/img/logo/logo.png" class="logo-img" alt="">
                                     </a>
                                 </div>
                             </div>

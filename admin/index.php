@@ -57,8 +57,8 @@
                         <span class="number">11,216</span>
                     </div>
                     <div class="box box3">
-                        <i class="uil uil-building"></i>
-                        <span class="text">Total Properties</span>
+                        <i class="uil uil-question"></i>
+                        <span class="text">Total Enquiry</span>
                         <span class="number">5,110</span>
                     </div>
                 </div>
@@ -129,40 +129,58 @@
 
                     <div class="data inquiry" style="display:none">
                         <span class="data-title">inquiry</span>
+                        <!-- dummy data -->
+                        <span class='data-list users-inquiry'>dummy message</span>
+                        <span class='data-list users-inquiry'>dummy message</span>
+                        <span class='data-list users-inquiry'>dummy message</span>
+                        <span class='data-list users-inquiry'>dummy message</span>
+                        <span class='data-list users-inquiry'>dummy message</span>
                         <?php
                          
-                         for($i=0;$i<sizeof($data);$i++) {
-                            echo "<span class='data-list users-inquiry'>". $data[$i]['message'] . "</span>";
-                         }
+                        //  for($i=0;$i<sizeof($data);$i++) {
+                        //     echo "<span class='data-list users-inquiry'>". $data[$i]['message'] . "</span>";
+                        //  }
                           ?> 
                     </div>
 
                     <div class="data joined">
                         <span class="data-title">Date</span>
+                        <!-- dummy data -->
+                        <span class='data-list date'>2024-9-01</span>
+                        <span class='data-list date'>2024-9-01</span>
+                        <span class='data-list date'>2024-9-01</span>
+                        <span class='data-list date'>2024-9-01</span>
+                        <span class='data-list date'>2024-9-01</span>
                         <?php
                          
-                         for($i=0;$i<sizeof($data);$i++) {
-                            $str = explode(" ",$data[$i]['date']);
-                            $date = DateTime::createFromFormat('Y-m-d',$str[0]);
-                            $newdate = $date->format('d/m/y');
-                            echo "<span class='data-list date'>". $newdate . "</span>";
-                         }
+                        //  for($i=0;$i<sizeof($data);$i++) {
+                        //     $str = explode(" ",$data[$i]['date']);
+                        //     $date = DateTime::createFromFormat('Y-m-d',$str[0]);
+                        //     $newdate = $date->format('d/m/y');
+                        //     echo "<span class='data-list date'>". $newdate . "</span>";
+                        //  }
                           ?> 
                     </div>
 
                     <div class="data status">
                         <span class="data-title">Action</span>
+                        <!-- dummy data -->
+                        <span class='data-list view-btn' value=''> View </span>
+                        <span class='data-list view-btn' value=''> View </span>
+                        <span class='data-list view-btn' value=''> View </span>
+                        <span class='data-list view-btn' value=''> View </span>
+                        <span class='data-list view-btn' value=''> View </span>
                         <?php
-                            for($i=0;$i<sizeof($data);$i++) {
-                                echo "<span class='data-list view-btn' value='".$data[$i]['id']."'> View </span>";
-                            }
+                            // for($i=0;$i<sizeof($data);$i++) {
+                            //     echo "<span class='data-list view-btn' value='".$data[$i]['id']."'> View </span>";
+                            // }
                         ?>
                     </div>
                 </div>
             </div>
             <?php
-                       if(sizeof($data)==0)
-                        echo "<br><center> <span class='data-list'> No Request Found </span> </center>";
+                    //    if(sizeof($data)==0)
+                    //     echo "<br><center> <span class='data-list'> No Request Found </span> </center>";
 
                        ?>
         </div>
