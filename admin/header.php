@@ -1,9 +1,9 @@
 <?php  session_start();
-// if(!isset($_SESSION['id']))
-//  header("location: ../index.php");
+if(!isset($_SESSION['id']))
+ header("location: ../index.php");
 
         include("./preloader.php"); 
-// ?>
+ ?>
 <nav>
         <div class="logo-name">
             <div class="logo-image">
@@ -45,7 +45,7 @@
 
             <ul class="logout-mode">
                 <li>
-                    <a href="../controllers/AppController.php?action=logout" id="">
+                    <a href="../controllers/AdminController.php?action=logout" id="">
                         <i class="uil uil-signout"></i>
                         <span class="link-name">Logout</span>
                     </a>

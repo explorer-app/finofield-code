@@ -34,7 +34,7 @@
 
 
         </div>
-        <form class="box" id="loginForm" action="../controllers/AppController.php?action=admin-login" method="post">
+        <form class="box" id="loginForm" action="../controllers/AdminController.php?action=admin-login" method="post">
             <div class="input">
                 <i class="fa fa-envelope"></i>
                 <input type="email" name="email" placeholder="Enter Email" required>
@@ -97,3 +97,17 @@ function check(formData) {
         return true;
 }
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
