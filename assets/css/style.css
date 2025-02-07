@@ -485,9 +485,9 @@ hr {
     width: 250px;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
     .logo-img{
-        width: 200px;
+        width: 150px;
     }
 }
 

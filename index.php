@@ -265,20 +265,21 @@
                         <img src="assets/img/icon/heart.svg" alt="">
                         <h3>95%</h3>
                     </div>
-                    <p>Interdum nulla, ut commodo<br> diam libero vitae erat.</p>
+                    <p>Transforming Businesses,<br> One Solution at a Time</p>
                 </div>
             </div>
         </div>
         <!-- About Area End-->
         <!--? Testimonial Area Start -->
-        <section class="testimonial-area testimonial-padding fix" data-background="assets/img/gallery/section_bg03.png">
+
+        <!-- <section class="testimonial-area testimonial-padding fix" data-background="assets/img/gallery/section_bg03.png">
             <div class="container">
                 <div class="row align-items-center justify-content-center">
                     <div class=" col-lg-9">
                         <div class="about-caption">
-                            <!-- Testimonial Start -->
+                            
                             <div class="h1-testimonial-active dot-style">
-                                <!-- Single Testimonial -->
+                                
                                 <div class="single-testimonial position-relative">
                                     <div class="testimonial-caption">
                                         <img src="assets/img/icon/quotes-sign.png" alt="" class="quotes-sign">
@@ -287,7 +288,7 @@
                                             ustomization possibilities. Pixel-perfect replica;ition of thei designers
                                             ijtls intended csents your se.</p>
                                     </div>
-                                    <!-- founder -->
+                                    
                                     <div class="testimonial-founder d-flex align-items-center">
                                         <div class="founder-img">
                                             <img src="assets/img/icon/testimonial.png" alt="">
@@ -298,7 +299,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- Single Testimonial -->
+                                
                                 <div class="single-testimonial position-relative">
                                     <div class="testimonial-caption">
                                         <img src="assets/img/icon/quotes-sign.png" alt="" class="quotes-sign">
@@ -307,7 +308,7 @@
                                             ustomization possibilities. Pixel-perfect replica;ition of thei designers
                                             ijtls intended csents your se.</p>
                                     </div>
-                                    <!-- founder -->
+                                    
                                     <div class="testimonial-founder d-flex align-items-center">
                                         <div class="founder-img">
                                             <img src="assets/img/icon/testimonial.png" alt="">
@@ -319,12 +320,13 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Testimonial End -->
+                            
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
+
         <!--? Testimonial Area End -->
         <!-- Home Blog Start -->
 
