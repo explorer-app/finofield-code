@@ -69,13 +69,13 @@ button {
     place-items: center;
     border-radius: 3px;
     border: none;
-    background-color: #caffae;
+    background-color: #ffb766;
     outline: none;
     color: #020929;
 }
 
 button:hover {
-    border: 2px dotted green;
+    border: 2px solid rgb(186, 105, 13);
 }
 
 .save {
@@ -106,9 +106,9 @@ button:hover {
     width: fit-content;
 }
 
-.openFile {
+.updateFile {
     border: none;
-    background-color: rgb(7, 213, 100);
+    background-color: rgb(255, 182, 56);
     color: white;
     padding: 7px;
     border-radius: 5px;
@@ -118,7 +118,7 @@ button:hover {
 .save input {
     border: none;
     outline: none;
-    background-color: rgb(201, 244, 172);
+    background-color: rgb(244, 227, 172);
     border-radius: 5px;
     font-weight: bolder;
     padding: 3px;

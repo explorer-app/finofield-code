@@ -41,7 +41,7 @@
             <div class="input-field">
                 <label for="service-img">Upload Image</label>
                 <input type="file" id="service-img" accept="image/*" required>
-            </div>
+            </div><br>
             <button type="submit" class="submit-btn">Submit</button>
         </form>
     </div>
@@ -60,7 +60,6 @@
         document.getElementById("serviceForm").addEventListener("submit", function(event) {
             event.preventDefault();
             alert("Service Submitted Successfully!");
-            // You can send the data to the backend using Fetch API or AJAX here.
         });
     </script>
 </body>
