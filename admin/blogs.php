@@ -45,12 +45,10 @@
                     <span class="text">Dashboard</span>
                 </div>
                 <div class="boxes">
-                    <a style="text-decoration: none" class="box box2" href="./blog_preview.php">
-                    <div class="box box2">
+                    <a class="a box box2" href="./blog_preview.php">
                             <i class="uil uil-plus"></i>
                             <span class="text">Create Blog</span>
                             <!-- <span class="number">11,216</span> -->
-                        </div>
                     </a>
                     
             </div>

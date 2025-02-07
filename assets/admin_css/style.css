@@ -15,7 +15,7 @@
     --white-color: #e2f6c2;
     --border-color: #e6e5e5;
     --toggle-color: #7d7878;
-    --box1-color: #4da3ff;
+    --box1-color: #abd3ff;
     --box2-color: #ffe6ac;
     --box3-color: #e7d1fc;
     --title-icon-color: #fff;
@@ -394,6 +394,10 @@ nav.close ~ .panel .top{
     font-size: 40px;
     color: var(--primary-color);
     cursor: pointer;
+}
+
+.a {
+    text-decoration: none;
 }
 
 @media (max-width: 1000px) {

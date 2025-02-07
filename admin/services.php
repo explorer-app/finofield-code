@@ -50,10 +50,10 @@
                     <span class="text">Services</span>
                 </div>
                 <div class="boxes">
-                    <div class="box box1" value="living-room">
+                    <a href="./service_modifier.php" class="a box box1" value="living-room">
                         <i class="uil uil-plus"></i>
                         <span class="text">Create Services</span>
-                    </div>
+                    </a>
                 </div>
             </div>
             <div class="activity">
