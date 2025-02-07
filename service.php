@@ -71,6 +71,7 @@
                     <div class="section-tittle mb-50">
                         <!-- <h2>Our<br>Philosophy</h2> -->
                     </div>
+                    <br>
                     <div class="about-more">
                         <p>At present, most of the entities across the globe has presence in India in some form;
                             be it manufacturing in India, running cost centers, developing IT products,
@@ -90,6 +91,7 @@
                     </div>
                 </div>
             </div>
+            <br>
             <!--Right Contents  -->
             <div class="col-12 col-md-6 text-center">
                 <div class="image">
