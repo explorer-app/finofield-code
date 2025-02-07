@@ -9,7 +9,7 @@
 }
 
 body {
-    background-image: url('../admin_login_image/background.jpg');
+    background-image: url('../admin_login_image/background.png');
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
@@ -26,6 +26,7 @@ body {
     background-color: rgba(255, 255, 255, .8); /* Set the white background with 0.8 opacity */
     max-width: 500px;
     padding: 20px;
+    font-size: large;
     user-select: none;
     border-radius: 20px;
     text-align: center;
@@ -38,6 +39,7 @@ body {
 .container h2 {
     font-weight: bolder;
     color: black;
+    font-size: xx-large;
     font-family: sans-serif;
 }
 

@@ -251,7 +251,7 @@
                         <img src="assets/img/icon/heart.svg" alt="">
                         <h3>95%</h3>
                     </div>
-                    <p>Interdum nulla, ut commodo<br> diam libero vitae erat.</p>
+                    <p>Transforming Businesses,<br> One Solution at a Time</p>
                 </div>
             </div>
         </div>

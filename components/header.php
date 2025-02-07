@@ -33,12 +33,12 @@
                                                 <li><a href="about.php">About</a></li>
                                                 <li><a href="services.php">Services</a>
                                                     <ul class="submenu">
-                                                        <li><a href="blog.php">1. </a></li>
-                                                        <li><a href="blog.php">2. </a></li>
-                                                        <li><a href="blog.php">3. </a></li>
-                                                        <li><a href="blog.php">4. </a></li>
-                                                        <li><a href="blog.php">5. </a></li>
-                                                        <li><a href="blog.php">6. </a></li>
+                                                        <li><a href="services.php">1. </a></li>
+                                                        <li><a href="services.php">2. </a></li>
+                                                        <li><a href="services.php">3. </a></li>
+                                                        <li><a href="services.php">4. </a></li>
+                                                        <li><a href="services.php">5. </a></li>
+                                                        <li><a href="services.php">6. </a></li>
                                                     </ul>
                                                 </li>
                                                 <li><a href="blog.php">Blog</a></li>
