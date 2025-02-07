@@ -75,12 +75,12 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="single-services single-services2 mb-30 section-over1 text-center">
                             <div class="services-img">
-                                <img src="assets/img/gallery/team1.png" alt="">
+                                <img src="assets/img/gallery/legal.png" alt="">
                                 <div class="services-caption">
                                     <h3><a href="#">Setting up Legal Entity</a></h3>
                                     <p>helps businesses choose the right legal entity in India, 
                                         ensuring minimal compliance, cost efficiency, and regulatory ease.</p>
-                                    <a href="#" class="btn btn3">Make Appointment</a>
+                                    <a href="#" class="btn btn3">view</a>
                                 </div>
                             </div>
                         </div>
@@ -88,13 +88,13 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="single-services single-services2 mb-30 section-over1 text-center">
                             <div class="services-img">
-                                <img src="assets/img/gallery/team2.png" alt="">
+                                <img src="assets/img/gallery/taxr.png" alt="">
                                 <div class="services-caption">
                                     <h3><a href="#">Tax & Regulatory Advisory & Compliance</a></h3>
                                     <p>seamless tax and regulatory compliance in India, 
                                         helping businesses make tax-efficient decisions while minimizing 
                                         regulatory intervention.</p>
-                                    <a href="#" class="btn btn3">Make Appointment</a>
+                                    <a href="#" class="btn btn3">view</a>
                                 </div>
                             </div>
                         </div>
@@ -102,13 +102,13 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="single-services single-services2 mb-30 section-over1 text-center">
                             <div class="services-img">
-                                <img src="assets/img/gallery/team3.png" alt="">
+                                <img src="assets/img/gallery/abk.png" alt="">
                                 <div class="services-caption">
                                     <h3><a href="#">Accounting/book-keeping & Financial reporting</a></h3>
                                     <p>provides expert accounting and bookkeeping services, 
                                         ensuring real-time financial tracking, 
                                         cost efficiency, and seamless audit support for businesses.</p>
-                                    <a href="#" class="btn btn3">Make Appointment</a>
+                                    <a href="#" class="btn btn3">view</a>
                                 </div>
                             </div>
                         </div>
@@ -116,13 +116,13 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="single-services single-services2 mb-30 section-over1 text-center">
                             <div class="services-img">
-                                <img src="assets/img/gallery/team2.png" alt="">
+                                <img src="assets/img/gallery/ifrs.png" alt="">
                                 <div class="services-caption">
                                     <h3><a href="#">IFRS conversion</a></h3>
                                     <p>assists businesses in seamlessly converting Indian financials to IFRS, 
                                         ensuring smooth global consolidation and compliance 
                                         with international reporting standards.</p>
-                                    <a href="#" class="btn btn3">Make Appointment</a>
+                                    <a href="#" class="btn btn3">view</a>
                                 </div>
                             </div>
                         </div>
@@ -130,13 +130,13 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="single-services single-services2 mb-30 section-over1 text-center">
                             <div class="services-img">
-                                <img src="assets/img/gallery/team1.png" alt="">
+                                <img src="assets/img/gallery/rep2.png" alt="">
                                 <div class="services-caption">
                                     <h3><a href="#">Representation before various regulators including tax authorities</a></h3>
                                     <p>provides expert regulatory and tax assessment support, 
                                         handling compliance disputes and legal matters 
                                         at all levels to ensure business continuity.</p>
-                                    <a href="#" class="btn btn3">Make Appointment</a>
+                                    <a href="#" class="btn btn3">view</a>
                                 </div>
                             </div>
                         </div>
@@ -144,14 +144,14 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="single-services single-services2 mb-30 section-over1 text-center">
                             <div class="services-img">
-                                <img src="assets/img/gallery/team3.png" alt="">
+                                <img src="assets/img/gallery/oth.png" alt="">
                                 <div class="services-caption">
                                     <h3><a href="#">Others</a></h3>
                                     <p>helps businesses leverage government incentives, policy benefits, 
                                         and compliance services, 
                                         ensuring maximum financial advantages and 
                                         regulatory efficiency in India.</p>
-                                    <a href="#" class="btn btn3">Make Appointment</a>
+                                    <a href="#" class="btn btn3">view</a>
                                 </div>
                             </div>
                         </div>
