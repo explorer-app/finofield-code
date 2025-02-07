@@ -33,21 +33,12 @@
                                                 <li><a href="about.php">About</a></li>
                                                 <li><a href="services.php">Services</a>
                                                     <ul class="submenu">
-<<<<<<< HEAD
-                                                        <li><a href="blog.php">1.Legal entity</a></li>
-                                                        <li><a href="blog.php">2.Tax & Regulatory Advisory</a></li>
-                                                        <li><a href="blog.php">3.Accounting/book-keeping</a></li>
-                                                        <li><a href="blog.php">4.IFRS conversion </a></li>
-                                                        <li><a href="blog.php">5.Representation </a></li>
-                                                        <li><a href="blog.php">6.Others </a></li>
-=======
-                                                        <li><a href="services.php">1. </a></li>
-                                                        <li><a href="services.php">2. </a></li>
-                                                        <li><a href="services.php">3. </a></li>
-                                                        <li><a href="services.php">4. </a></li>
-                                                        <li><a href="services.php">5. </a></li>
-                                                        <li><a href="services.php">6. </a></li>
->>>>>>> 37cfbf60b38b15c4a56d673840f1ba1a493fa475
+                                                        <li><a href="blog.php">1. Legal entity</a></li>
+                                                        <li><a href="blog.php">2. Tax & Regulatory Advisory</a></li>
+                                                        <li><a href="blog.php">3. Accounting / book-keeping</a></li>
+                                                        <li><a href="blog.php">4. IFRS conversion </a></li>
+                                                        <li><a href="blog.php">5. Representation </a></li>
+                                                        <li><a href="blog.php">6. Others </a></li>
                                                     </ul>
                                                 </li>
                                                 <li><a href="blog.php">Blog</a></li>
