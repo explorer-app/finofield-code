@@ -45,4 +45,22 @@ if($action === 'admin-login'  && $_SERVER['REQUEST_METHOD'] === 'POST') {
     header("location: ../login/index.php");
 }
 
+    else if($action === 'contact_process' && $_SERVER['REQUEST_METHOD']==='POST') {
+
+        $name = filter_input(INPUT_POST, "name");
+        $email = filter_input(INPUT_POST, "email");
+        $message = filter_input(INPUT_POST, "message");
+        $phone = filter_input(INPUT_POST, "mobile");
+
+        if(!$name || !$email || !$message || !$phone) {
+            echo "Invalid input";
+            header("location: ../index.php");
+        }
+
+        $adminModel->sendMessage(['name'=>$name, 'email'=>$email, 'mobile'=>$phone, 'message'=>$message]);
+
+        $_SESSION['request'] = "Successfully request submitted";
+        header("location: ../index.php");
+    }
+
 ?>
