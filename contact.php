@@ -29,7 +29,18 @@
 
 <body>
     <!-- ? Preloader Start -->
-    <?php include('./components/header.php')?>
+
+    <?php
+    session_start();
+
+    if(isset($_SESSION['request'])) {
+        $msg = $_SESSION['request'];
+        echo "<script> alert('$msg'); </script>";
+    }
+
+    include('./components/header.php')
+    
+    ?>
 
     <main>
         <!--? slider Area Start-->
@@ -524,7 +535,7 @@
                         <h2 class="contact-title">Get in Touch</h2>
                     </div>
                     <div class="col-lg-8">
-                        <form class="form-contact contact_form" action="contact_process.php" method="post"
+                        <form class="form-contact contact_form" action="controllers/AdminController.php" method="post"
                             id="contactForm" novalidate="novalidate">
                             <div class="row">
                                 <div class="col-12">
@@ -551,9 +562,9 @@
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <input class="form-control" name="subject" id="subject" type="text"
-                                            onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'"
-                                            placeholder="Enter Subject">
+                                        <input class="form-control" name="mobile" id="subject" type="text"
+                                            onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Mobile No.'"
+                                            placeholder="Enter Mobile No.">
                                     </div>
                                 </div>
                             </div>
