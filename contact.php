@@ -535,6 +535,9 @@
                         <h2 class="contact-title">Get in Touch</h2>
                     </div>
                     <div class="col-lg-8">
+                    <div id="success" style="display:none; color: green; margin-top: 10px;"></div>
+                    <div id="error" style="display:none; color: red; margin-top: 10px;"></div>
+
                         <form class="form-contact contact_form" action="controllers/AdminController.php?action=contact_process" method="post"
                             id="contactForm" novalidate="novalidate">
                             <div class="row">

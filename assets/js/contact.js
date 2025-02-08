@@ -1,26 +1,14 @@
-$(document).ready(function(){
-    
-    (function($) {
+$(document).ready(function () {
+    (function ($) {
         "use strict";
 
-    
-    jQuery.validator.addMethod('answercheck', function (value, element) {
-        return this.optional(element) || /^\bcat\b$/.test(value)
-    }, "type the correct answer -_-");
-
-    // validate contactForm form
-    $(function() {
         $('#contactForm').validate({
             rules: {
                 name: {
                     required: true,
                     minlength: 2
                 },
-                subject: {
-                    required: true,
-                    minlength: 4
-                },
-                number: {
+                mobile: {
                     required: true,
                     minlength: 5
                 },
@@ -35,51 +23,54 @@ $(document).ready(function(){
             },
             messages: {
                 name: {
-                    required: "come on, you have a name, don't you?",
-                    minlength: "your name must consist of at least 2 characters"
+                    required: "Please enter your name.",
+                    minlength: "Your name must be at least 2 characters long."
                 },
-                subject: {
-                    required: "come on, you have a subject, don't you?",
-                    minlength: "your subject must consist of at least 4 characters"
-                },
-                number: {
-                    required: "come on, you have a number, don't you?",
-                    minlength: "your Number must consist of at least 5 characters"
+                mobile: {
+                    required: "Please enter your mobile number.",
+                    minlength: "Your mobile number must be at least 5 characters long."
                 },
                 email: {
-                    required: "no email, no message"
+                    required: "Please enter your email address."
                 },
                 message: {
-                    required: "um...yea, you have to write something to send this form.",
-                    minlength: "thats all? really?"
+                    required: "Please enter a message.",
+                    minlength: "Your message must be at least 20 characters long."
                 }
             },
-            submitHandler: function(form) {
-                $(form).ajaxSubmit({
-                    type:"POST",
+            submitHandler: function (form) {
+                let submitButton = $(".button-contactForm");
+                let successMessage = $("#success");
+                let errorMessage = $("#error");
+
+                // Show loading state
+                submitButton.prop("disabled", true).text("Sending...");
+                
+                $.ajax({
+                    type: "POST",
+                    url: "controllers/AdminController.php?action=contact_process",
                     data: $(form).serialize(),
-                    url:"contact_process.php",
-                    success: function() {
-                        $('#contactForm :input').attr('disabled', 'disabled');
-                        $('#contactForm').fadeTo( "slow", 1, function() {
-                            $(this).find(':input').attr('disabled', 'disabled');
-                            $(this).find('label').css('cursor','default');
-                            $('#success').fadeIn()
-                            $('.modal').modal('hide');
-		                	$('#success').modal('show');
-                        })
+                    beforeSend: function () {
+                        successMessage.hide();
+                        errorMessage.hide();
                     },
-                    error: function() {
-                        $('#contactForm').fadeTo( "slow", 1, function() {
-                            $('#error').fadeIn()
-                            $('.modal').modal('hide');
-		                	$('#error').modal('show');
-                        })
+                    success: function (response) {
+                        // Show success message
+                        successMessage.text("Message submitted successfully!").fadeIn();
+                        
+                        // Clear form fields
+                        $('#contactForm')[0].reset();
+                    },
+                    error: function () {
+                        // Show error message
+                        errorMessage.text("Oops! Something went wrong. Please try again.").fadeIn();
+                    },
+                    complete: function () {
+                        // Enable button again
+                        submitButton.prop("disabled", false).text("Send");
                     }
-                })
+                });
             }
-        })
-    })
-        
- })(jQuery)
-})
+        });
+    })(jQuery);
+});
