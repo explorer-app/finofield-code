@@ -45,22 +45,37 @@ if($action === 'admin-login'  && $_SERVER['REQUEST_METHOD'] === 'POST') {
     header("location: ../login/index.php");
 }
 
-    else if($action === 'contact_process' && $_SERVER['REQUEST_METHOD']==='POST') {
-
-        $name = filter_input(INPUT_POST, "name");
-        $email = filter_input(INPUT_POST, "email");
-        $message = filter_input(INPUT_POST, "message");
-        $phone = filter_input(INPUT_POST, "mobile");
-
-        if(!$name || !$email || !$message || !$phone) {
-            echo "Invalid input";
+    else if ($action === 'contact_process' && $_SERVER['REQUEST_METHOD'] === 'POST') {
+        session_start();  // Ensure session is started
+    
+        $name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_STRING);
+        $email = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
+        $message = filter_input(INPUT_POST, "message", FILTER_SANITIZE_STRING);
+        $phone = filter_input(INPUT_POST, "mobile", FILTER_SANITIZE_STRING);
+    
+        if (!$name || !$email || !$message || !$phone) {
+            $_SESSION['error'] = "Invalid input. Please fill all fields correctly.";
             header("location: ../index.php");
+            exit;
         }
-
-        $adminModel->sendMessage(['name'=>$name, 'email'=>$email, 'mobile'=>$phone, 'message'=>$message]);
-
-        $_SESSION['request'] = "Successfully request submitted";
+    
+        // Try inserting into database
+        $result = $adminModel->sendMessage([
+            'name' => $name,
+            'email' => $email,
+            'mobile' => $phone,
+            'message' => $message
+        ]);
+    
+        if ($result) {
+            $_SESSION['success'] = "Successfully submitted request.";
+        } else {
+            $_SESSION['error'] = "Error submitting request. Please try again.";
+        }
+    
         header("location: ../index.php");
+        exit;
     }
+    
 
 ?>
