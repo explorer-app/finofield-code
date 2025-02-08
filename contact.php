@@ -33,10 +33,6 @@
     <?php
     session_start();
 
-    if(isset($_SESSION['request'])) {
-        $msg = $_SESSION['request'];
-        echo "<script> alert('$msg'); </script>";
-    }
 
     include('./components/header.php')
     
