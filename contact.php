@@ -535,7 +535,7 @@
                         <h2 class="contact-title">Get in Touch</h2>
                     </div>
                     <div class="col-lg-8">
-                        <form class="form-contact contact_form" action="controllers/AdminController.php" method="post"
+                        <form class="form-contact contact_form" action="controllers/AdminController.php?action=contact_process" method="post"
                             id="contactForm" novalidate="novalidate">
                             <div class="row">
                                 <div class="col-12">
