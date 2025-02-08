@@ -33,12 +33,12 @@
                                                 <li><a href="about.php">About</a></li>
                                                 <li><a href="services.php">Services</a>
                                                     <ul class="submenu">
-                                                        <li><a href="blog.php">1. Legal entity</a></li>
-                                                        <li><a href="blog.php">2. Tax & Regulatory Advisory</a></li>
-                                                        <li><a href="blog.php">3. Accounting / book-keeping</a></li>
-                                                        <li><a href="blog.php">4. IFRS conversion </a></li>
-                                                        <li><a href="blog.php">5. Representation </a></li>
-                                                        <li><a href="blog.php">6. Others </a></li>
+                                                        <li><a href="service.php">1. Legal entity</a></li>
+                                                        <li><a href="service.php">2. Tax & Regulatory Advisory</a></li>
+                                                        <li><a href="service.php">3. Accounting / book-keeping</a></li>
+                                                        <li><a href="service.php">4. IFRS conversion </a></li>
+                                                        <li><a href="service.php">5. Representation </a></li>
+                                                        <li><a href="service.php">6. Others </a></li>
                                                     </ul>
                                                 </li>
                                                 <li><a href="blog.php">Blog</a></li>
