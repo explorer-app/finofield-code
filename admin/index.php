@@ -1,12 +1,12 @@
 <?php
 
-// include("../models/UserModel.php");
-//  include("../controllers/DatabaseController.php");
+include("../models/AdminModel.php");
+ include("../database/DbConnection.php");
 
-//  $db = new DatabaseController();
-//  $con = $db->getConnection();
-//  $usermodel = new UserModel($con);
-//  $data = $usermodel->getData();
+ $db = new DbConnection();
+ $con = $db->getConnection();
+ $adminModel = new AdminModel($con);
+ $data = $adminModel->getClientRequest();
 
 ?>
 
@@ -82,105 +82,105 @@
                     <div class="data names">
                         <span class="data-title">Name</span>
                         <!-- dummy data -->
+                        <!-- <span class='data-list users-name'>Arjun Tripathi</span>
                         <span class='data-list users-name'>Arjun Tripathi</span>
                         <span class='data-list users-name'>Arjun Tripathi</span>
                         <span class='data-list users-name'>Arjun Tripathi</span>
-                        <span class='data-list users-name'>Arjun Tripathi</span>
-                        <span class='data-list users-name'>Arjun Tripathi</span>
+                        <span class='data-list users-name'>Arjun Tripathi</span> -->
                         <?php
                          
-                        //  for($i=0;$i<sizeof($data);$i++) {
-                        //     echo "<span class='data-list users-name'>". $data[$i]['name'] . "</span>";
-                        //  }
+                         for($i=0;$i<sizeof($data);$i++) {
+                            echo "<span class='data-list users-name'>". $data[$i]['contact_name'] . "</span>";
+                         }
                           ?> 
                     </div>
 
                     <div class="data emails">
                         <span class="data-title">Email</span>
                         <!-- dummy data -->
+                        <!-- <span class='data-list users-email'>arjun@gmail.com</span>
                         <span class='data-list users-email'>arjun@gmail.com</span>
                         <span class='data-list users-email'>arjun@gmail.com</span>
                         <span class='data-list users-email'>arjun@gmail.com</span>
-                        <span class='data-list users-email'>arjun@gmail.com</span>
-                        <span class='data-list users-email'>arjun@gmail.com</span>
+                        <span class='data-list users-email'>arjun@gmail.com</span> -->
                         <?php
                          
-                        //  for($i=0;$i<sizeof($data);$i++) {
-                        //     echo "<span class='data-list users-email'>". $data[$i]['email'] . "</span>";
-                        //  }
+                         for($i=0;$i<sizeof($data);$i++) {
+                            echo "<span class='data-list users-email'>". $data[$i]['contact_email'] . "</span>";
+                         }
                           ?> 
                     </div>
 
                     <div class="data mobiles">
                         <span class="data-title">Phone</span>
                         <!-- dummy data -->
+                        <!-- <span class='data-list users-phone'>+9179879879879878</span>
                         <span class='data-list users-phone'>+9179879879879878</span>
                         <span class='data-list users-phone'>+9179879879879878</span>
                         <span class='data-list users-phone'>+9179879879879878</span>
-                        <span class='data-list users-phone'>+9179879879879878</span>
-                        <span class='data-list users-phone'>+9179879879879878</span>
+                        <span class='data-list users-phone'>+9179879879879878</span> -->
                         <?php
                          
-                        //  for($i=0;$i<sizeof($data);$i++) {
-                        //     echo "<span class='data-list users-phone'>". $data[$i]['phone'] . "</span>";
-                        //  }
+                         for($i=0;$i<sizeof($data);$i++) {
+                            echo "<span class='data-list users-phone'>". $data[$i]['contact_number'] . "</span>";
+                         }
                           ?> 
                     </div>
 
                     <div class="data inquiry" style="display:none">
                         <span class="data-title">inquiry</span>
                         <!-- dummy data -->
+                        <!-- <span class='data-list users-inquiry'>dummy message</span>
                         <span class='data-list users-inquiry'>dummy message</span>
                         <span class='data-list users-inquiry'>dummy message</span>
                         <span class='data-list users-inquiry'>dummy message</span>
-                        <span class='data-list users-inquiry'>dummy message</span>
-                        <span class='data-list users-inquiry'>dummy message</span>
+                        <span class='data-list users-inquiry'>dummy message</span> -->
                         <?php
                          
-                        //  for($i=0;$i<sizeof($data);$i++) {
-                        //     echo "<span class='data-list users-inquiry'>". $data[$i]['message'] . "</span>";
-                        //  }
+                         for($i=0;$i<sizeof($data);$i++) {
+                            echo "<span class='data-list users-inquiry'>". $data[$i]['contact_message'] . "</span>";
+                         }
                           ?> 
                     </div>
 
                     <div class="data joined">
                         <span class="data-title">Date</span>
                         <!-- dummy data -->
+                        <!-- <span class='data-list date'>2024-9-01</span>
                         <span class='data-list date'>2024-9-01</span>
                         <span class='data-list date'>2024-9-01</span>
                         <span class='data-list date'>2024-9-01</span>
-                        <span class='data-list date'>2024-9-01</span>
-                        <span class='data-list date'>2024-9-01</span>
+                        <span class='data-list date'>2024-9-01</span> -->
                         <?php
                          
-                        //  for($i=0;$i<sizeof($data);$i++) {
-                        //     $str = explode(" ",$data[$i]['date']);
-                        //     $date = DateTime::createFromFormat('Y-m-d',$str[0]);
-                        //     $newdate = $date->format('d/m/y');
-                        //     echo "<span class='data-list date'>". $newdate . "</span>";
-                        //  }
+                         for($i=0;$i<sizeof($data);$i++) {
+                            $str = explode(" ",$data[$i]['date']);
+                            $date = DateTime::createFromFormat('Y-m-d',$str[0]);
+                            $newdate = $date->format('d/m/y');
+                            echo "<span class='data-list date'>". $newdate . "</span>";
+                         }
                           ?> 
                     </div>
 
                     <div class="data status">
                         <span class="data-title">Action</span>
                         <!-- dummy data -->
+                        <!-- <span class='data-list view-btn' value=''> View </span>
                         <span class='data-list view-btn' value=''> View </span>
                         <span class='data-list view-btn' value=''> View </span>
                         <span class='data-list view-btn' value=''> View </span>
-                        <span class='data-list view-btn' value=''> View </span>
-                        <span class='data-list view-btn' value=''> View </span>
+                        <span class='data-list view-btn' value=''> View </span> -->
                         <?php
-                            // for($i=0;$i<sizeof($data);$i++) {
-                            //     echo "<span class='data-list view-btn' value='".$data[$i]['id']."'> View </span>";
-                            // }
+                            for($i=0;$i<sizeof($data);$i++) {
+                                echo "<span class='data-list view-btn' value='".$data[$i]['contact_id']."'> View </span>";
+                            }
                         ?>
                     </div>
                 </div>
             </div>
             <?php
-                    //    if(sizeof($data)==0)
-                    //     echo "<br><center> <span class='data-list'> No Request Found </span> </center>";
+                       if(sizeof($data)==0)
+                        echo "<br><center> <span class='data-list'> No Request Found </span> </center>";
 
                        ?>
         </div>
