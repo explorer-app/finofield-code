@@ -48,7 +48,7 @@
                                     </div>
                                     <!-- left Btn -->
                                     <div class="header-right-btn f-right d-none d-lg-block  ml-30">
-                                        <a href="#" class="header-btn">Make an Appointment</a>
+                                        <a href="#" class="header-btn">Make an Appointment <i class="fa fa-phone"></i></a>
                                     </div>
                                 </div>
                             </div>
