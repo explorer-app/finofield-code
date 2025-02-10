@@ -149,7 +149,6 @@
         <div id="text-input" contenteditable="true"></div>
     </div>
     <!--Script-->
-    <script src="script.js"></script>
 </body>
 
 </html>
