@@ -8,6 +8,14 @@
     $topic_name = isset($_POST['topic_name']) ? $_POST['topic_name'] : "";
     $description = isset($_POST['description']) ? $_POST['description'] : "";
     $blog_image = isset($_POST['blog_image']) ? $_POST['blog_image'] : "";
+    $blog_id = isset($_POST['id']) ? $_POST['id'] : "";
+    $result = mysqli_query($con,"SELECT * FROM blog_url WHERE blogs = $blog_id");
+    if (!$result) {
+        echo 'Could not run query: ' . mysql_error();
+        exit;
+    }
+    $html_url = '../Notes/'.$row['notes_link'];
+    $html_content = file_get_contents($html_url);
 ?>
 
 
@@ -47,7 +55,7 @@
         <div class="save">
             <input type="text" id="fileName" value="index.html" placeholder="Enter a File Name">
             <input type="file" id="fileInput" style="display: none;">
-            <button id="save" class="saveFile"><i class="fa fa-save"> SAVE</i></button>
+            <button id="update" class="updateFile"><i class="fa fa-save"> Update</i></button>
         </div>
         <div class="options">
             <!-- Text Format -->
@@ -180,7 +188,7 @@
     let spacingButtons = document.querySelectorAll(".spacing");
     let formatButtons = document.querySelectorAll(".format");
     let scriptButtons = document.querySelectorAll(".script");
-    let saveButton = document.getElementById("save");
+    let updateButton = document.getElementById("update");
     // let openButton = document.getElementById("open");
 
     //List of fontlist
@@ -362,28 +370,42 @@
 
 
 
-    saveButton.addEventListener("click", () => {
-        let contentToSave = `<div class="blog_details">${document.getElementById('text-input').innerHTML}</div>`;
-
+    updateButton.addEventListener("click", () => {
+        let contentToSave = "";
+        if(append === false){
+            contentToSave = `${document.getElementById('text-input').innerHTML}`;
+        }
+        else {
+            contentToSave = document.getElementById('text-input').innerHTML;
+        }
         const fileName = document.getElementById('fileName').value + ".html";
-        const topic = document.getElementById('fileName').value;
-        const topic_name = '<?php echo $topic_name; ?>';
-        const description = '<?php echo $description; ?>';
-        const blog_image = '<?php echo $blog_image; ?>';
+        const topic = document.getElementById('fileName').value
+        const description = '<?= $description?>';
+        const blog_image = '<?= $blog_image?>';
 
         const xhr = new XMLHttpRequest();
         xhr.open('POST', 'save.php', true);
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         xhr.onreadystatechange = function () {
             if (xhr.readyState === 4 && xhr.status === 200) {
-                alert(xhr.responseText); // Show success/failure message
-                location.replace("../../blog.php");
+                alert(xhr.responseText); // Show a message indicating success or failure
+                location.replace("../../blogs.php");
             }
         };
-
-        xhr.send(`content=${encodeURIComponent(contentToSave)}&topicname=${encodeURIComponent(topic_name)}&description=${encodeURIComponent(description)}&blog_image=${encodeURIComponent(blog_image)}`);
+        xhr.send(`content=${encodeURIComponent(contentToSave)}&topicname=${encodeURIComponent(topic_name)}&description=${encodeURIComponent(description)}&blog_image=${encodeURIComponent(blog_image)}&id=${encodeURIComponent('<?= $blog_id?>')}`);
     });
 
+    function loadFile() {
+        const textInput = document.getElementById('text-input');
+        textInput.innerHTML = <?= json_encode($html_content, JSON_HEX_TAG) ?>;
+    }
+
+    window.addEventListener('beforeunload', (e) => {
+        e.preventDefault();
+        e.returnValue = 'Are you sure you want to leave this page? Your data may be lost.';
+    });
+
+    
         
 
     // // open a existing file to modify
@@ -429,5 +451,8 @@
         }
     });
 
-    window.onload = initializer;
+    window.onload = () => { 
+        loadFile();
+        initializer();
+    }
 </script>

@@ -41,7 +41,7 @@
                                                     <li><a href="service.php">6. Others </a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="blog.php">Blog</a></li>
+                                            <li><a href="blogs.php">Blog</a></li>
                                             <li><a href="contact.php">Contact</a></li>
                                         </ul>
                                     </nav>
