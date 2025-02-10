@@ -17,24 +17,31 @@
       return $slug."-" .$randomNumber . ".php";
     }
 
-    public function saveBlogDetails($title, $description, $image) {
 
-       $imagePath = "assets/blog_images/" .basename($image['name']);
-       move_uploaded_file($image['tmp_name'],$imagePath);
 
-       $blogFileName = $this->generateBlogFileName($title);
-       $blogFilePath = "../assets/blogs/" . $blogFileName;
-       
-       $stmt = $this->con->prepare("insert into blogs (blog_title, blog_description, blog_image, blog_filename) values (?,?,?,?)");
-       $stmt->bind_param("ssss",$tite, $description, $imagePath, $blogFileName);
-       $stmt->execute();
+    
 
-       return [
-         "id" => $this->con->insert_id,
-         "file" => $blogFilePath
-       ];    
+      public function saveBlogDetails($title, $description, $image) {
 
-    }
+         // Ensure you are using the full $_FILES array
+         $imagePath = "../assets/blog_images/" . basename($image['name']);
+         move_uploaded_file($image['tmp_name'], $imagePath);
+      
+         // Generate a unique file name for the blog
+         $blogFileName = $this->generateBlogFileName($title);
+         $blogFilePath = "../assets/blogs/" . $blogFileName;
+      
+         // Prepare the SQL statement
+         $stmt = $this->con->prepare("INSERT INTO blogs (blog_title, blog_description, blog_image, blog_filename) VALUES (?, ?, ?, ?)");
+         $stmt->bind_param("ssss", $title, $description, $imagePath, $blogFileName);
+         $stmt->execute();
+      
+         return [
+           "id" => $this->con->insert_id,
+           "file" => $blogFileName
+         ];
+      }
+   
 
 
     public function saveBlogContent($id, $content) {
