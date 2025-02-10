@@ -27,25 +27,29 @@
 
         <div class="container">
             <!-- Blog Form -->
+            <form action="../controllers/BlogController.php?action=blog_upload" method="post" encytype = "multipart/form-data">
             <div class="form-container">
                 <h2>Blog Form</h2>
+                
                 <div class="input">
                     <label>Cover Image:</label>
-                    <input type="file" id="cover-img" accept="image/*">
+                    <input type="file" id="cover-img" name="blog_image"  accept="image/*">
                 </div>
                 <div class="input">
                     <label>Title:</label>
-                    <input type="text" id="title" placeholder="Enter blog title">
+                    <input type="text" id="title" placeholder="Enter blog title" name="blog_title">
                 </div>
                 <div class="input">
                     <label>Description:</label>
                     <textarea id="description" rows="4"
-                        placeholder="Enter blog description (max 250 characters)"></textarea>
+                        placeholder="Enter blog description (max 250 characters)" name = "blog_description"></textarea>
                     <span class="description-limit">Max 250 characters allowed!</span>
                 </div>
             <button class="create-btn" onclick="window.location.href='./blog'">Create<button>
 
             </div>
+
+            </form>
 
             <!-- Blog Preview -->
             <div class="preview-container">
