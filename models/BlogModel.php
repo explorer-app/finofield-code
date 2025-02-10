@@ -17,6 +17,8 @@
       return $slug."-" .$randomNumber . ".php";
     }
 
+
+
     public function saveBlogDetails($title, $description, $image) {
 
        $imagePath = "assets/blog_images/" .basename($image['name']);
@@ -31,7 +33,7 @@
 
        return [
          "id" => $this->con->insert_id,
-         "file" => $blogFilePath
+         "file" => $blogFileName
        ];    
 
     }

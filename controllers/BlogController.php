@@ -17,6 +17,12 @@ if($action === "blog_upload" && isset($_POST['blog_button'])) {
 
     $result = $blogModel->saveBlogDetails($title, $description, $image);
 
+    if($result) {
+        header("location: ../admin/blog/index.php?id= " .$result['file']);
+    } else {
+        echo "Failed to save blog.";
+    }
+
    
 
 
