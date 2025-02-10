@@ -17,7 +17,7 @@ if($action === "blog_upload" && isset($_POST['blog_button'])) {
 
     $result = $blogModel->saveBlogDetails($title, $description, $image);
 
-     
+   
 
 
     
