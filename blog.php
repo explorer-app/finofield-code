@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>FinoField | Blog</title>
+    <title>FinoField | Blogs</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="manifest" href="site.webmanifest">
@@ -40,12 +40,12 @@
                 <div class="single-slider">
                     <div class="slider-cap-wrapper">
                         <div class="hero-caption">
-                            <h1 data-animation="fadeInLeft" data-delay=".4s">Blog</h1>
+                            <h1 data-animation="fadeInLeft" data-delay=".4s">Blogs</h1>
                             <!-- breadcrumb Start-->
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                    <li class="breadcrumb-item"><a href="#">Blog</a></li>
+                                    <li class="breadcrumb-item"><a href="#">Blogs</a></li>
                                 </ol>
                             </nav>
                         </div>
@@ -76,7 +76,7 @@
                                     </a>
                                 </div>
                                 <div class="blog_details">
-                                    <a class="d-inline-block" href="blog_details.html">
+                                    <a class="d-inline-block" href="./blogs">
                                         <h2 class="blog-head" style="color: #2d2d2d;">Google inks pact for new 35-storey
                                             office</h2>
                                     </a>
@@ -98,7 +98,7 @@
                                     </a>
                                 </div>
                                 <div class="blog_details">
-                                    <a class="d-inline-block" href="blog_details.html">
+                                    <a class="d-inline-block" href="./blogs">
                                         <h2 class="blog-head" style="color: #2d2d2d;">Google inks pact for new 35-storey
                                             office</h2>
                                     </a>
@@ -120,7 +120,7 @@
                                     </a>
                                 </div>
                                 <div class="blog_details">
-                                    <a class="d-inline-block" href="blog_details.html">
+                                    <a class="d-inline-block" href="./blogs">
                                         <h2 class="blog-head" style="color: #2d2d2d;">Google inks pact for new 35-storey
                                             office</h2>
                                     </a>
@@ -142,7 +142,7 @@
                                     </a>
                                 </div>
                                 <div class="blog_details">
-                                    <a class="d-inline-block" href="blog_details.html">
+                                    <a class="d-inline-block" href="./blogs">
                                         <h2 class="blog-head" style="color: #2d2d2d;">Google inks pact for new 35-storey
                                             office</h2>
                                     </a>
@@ -164,7 +164,7 @@
                                     </a>
                                 </div>
                                 <div class="blog_details">
-                                    <a class="d-inline-block" href="blog_details.html">
+                                    <a class="d-inline-block" href="./blogs">
                                         <h2 class="blog-head" style="color: #2d2d2d;">Google inks pact for new 35-storey
                                             office</h2>
                                     </a>
@@ -224,7 +224,7 @@
                                 <div class="media post_item">
                                     <img src="assets/img/post/post_1.png" alt="post">
                                     <div class="media-body">
-                                        <a href="blog_details.html">
+                                        <a href="./blogs">
                                             <h3 style="color: #2d2d2d;">From life was you fish...</h3>
                                         </a>
                                         <p>January 12, 2019</p>
@@ -233,7 +233,7 @@
                                 <div class="media post_item">
                                     <img src="assets/img/post/post_2.png" alt="post">
                                     <div class="media-body">
-                                        <a href="blog_details.html">
+                                        <a href="./blogs">
                                             <h3 style="color: #2d2d2d;">The Amazing Hubble</h3>
                                         </a>
                                         <p>02 Hours ago</p>
@@ -242,7 +242,7 @@
                                 <div class="media post_item">
                                     <img src="assets/img/post/post_3.png" alt="post">
                                     <div class="media-body">
-                                        <a href="blog_details.html">
+                                        <a href="./blogs">
                                             <h3 style="color: #2d2d2d;">Astronomy Or Astrology</h3>
                                         </a>
                                         <p>03 Hours ago</p>
@@ -251,7 +251,7 @@
                                 <div class="media post_item">
                                     <img src="assets/img/post/post_4.png" alt="post">
                                     <div class="media-body">
-                                        <a href="blog_details.html">
+                                        <a href="./blogs">
                                             <h3 style="color: #2d2d2d;">Asteroids telescope</h3>
                                         </a>
                                         <p>01 Hours ago</p>
