@@ -45,7 +45,7 @@
                         placeholder="Enter blog description (max 250 characters)" name = "blog_description"></textarea>
                     <span class="description-limit">Max 250 characters allowed!</span>
                 </div>
-            <button class="create-btn" onclick="window.location.href='./blog'">Create<button>
+            <button class="create-btn" name="blog_button" onclick="window.location.href='./blog'">Create<button>
 
             </div>
 

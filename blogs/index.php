@@ -280,7 +280,7 @@
     </section>
     <!-- Blog Area End -->
   </main>
-  <?php include('./components/footer.php')?>
+  <?php include('../components/footer.php')?>
 
   <!-- Scroll Up -->
   <div id="back-top">
