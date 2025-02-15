@@ -5,16 +5,25 @@
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
 
-    $topic_name = isset($_POST['topic_name']) ? $_POST['topic_name'] : "";
-    $description = isset($_POST['description']) ? $_POST['description'] : "";
-    $blog_image = isset($_POST['blog_image']) ? $_POST['blog_image'] : "";
-    $blog_id = isset($_POST['id']) ? $_POST['id'] : "";
-    $result = mysqli_query($con,"SELECT * FROM blog_url WHERE blogs = $blog_id");
-    if (!$result) {
-        echo 'Could not run query: ' . mysql_error();
-        exit;
+    include("../../database/DbConnection.php");
+    include("../../models/BlogModel.php");
+
+    if(!isset($_GET['blog_id'])) {
+        header("location: ../../index.php");
     }
-    $html_url = '../Notes/'.$row['notes_link'];
+
+    $db = new DbConnection();
+    $con = $db->getConnection();
+
+    $blogModel = new BlogModel($con);
+    $blog = $blogModel->getBlogById($_GET['blog_id']);
+
+    $blog_id = $blog['blog_id'];
+    $blog_title = $blog['blog_title'];
+    $blog_description = $blog['blog_description'];
+    $blog_image = $blog['blog_image'];
+
+    $html_url = '../../assets/blogs/'.$blog['blog_filename'];
     $html_content = file_get_contents($html_url);
 ?>
 
@@ -53,7 +62,7 @@
 </header>
     <div class="container">
         <div class="save">
-            <input type="text" id="fileName" value="index.html" placeholder="Enter a File Name">
+            <input type="text" id="fileName" value="<?php echo $blog_title;      ?>">
             <input type="file" id="fileInput" style="display: none;">
             <button id="update" class="updateFile"><i class="fa fa-save"> Update</i></button>
         </div>
@@ -170,7 +179,6 @@
         <div id="text-input" contenteditable="true"></div>
     </div>
     <!--Script-->
-    <script src="script.js"></script>
 </body>
 
 </html>
@@ -371,29 +379,28 @@
 
 
     updateButton.addEventListener("click", () => {
-        let contentToSave = "";
-        if(append === false){
-            contentToSave = `${document.getElementById('text-input').innerHTML}`;
-        }
-        else {
-            contentToSave = document.getElementById('text-input').innerHTML;
-        }
-        const fileName = document.getElementById('fileName').value + ".html";
-        const topic = document.getElementById('fileName').value
-        const description = '<?= $description?>';
-        const blog_image = '<?= $blog_image?>';
+    let contentToSave = document.getElementById('text-input').innerHTML;
 
-        const xhr = new XMLHttpRequest();
-        xhr.open('POST', 'save.php', true);
-        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === 4 && xhr.status === 200) {
-                alert(xhr.responseText); // Show a message indicating success or failure
-                location.replace("../../blogs.php");
-            }
-        };
-        xhr.send(`content=${encodeURIComponent(contentToSave)}&topicname=${encodeURIComponent(topic_name)}&description=${encodeURIComponent(description)}&blog_image=${encodeURIComponent(blog_image)}&id=${encodeURIComponent('<?= $blog_id?>')}`);
-    });
+    const fileName = document.getElementById('fileName').value + ".html";
+    const topic = document.getElementById('fileName').value;
+    const description = "<?= $description ?>"; // Corrected PHP usage
+    const blog_image = "<?= $blog_image ?>";
+    const blog_id = "<?= $blog_id ?>"; // Corrected PHP variable usage
+
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', 'save.php', true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            alert(xhr.responseText); // Show a message indicating success or failure
+            location.replace("../../blogs.php");
+        }
+    };
+
+    xhr.send(`content=${encodeURIComponent(contentToSave)}&topicname=${encodeURIComponent(topic)}&description=${encodeURIComponent(description)}&blog_image=${encodeURIComponent(blog_image)}&id=${encodeURIComponent(blog_id)}`);
+});
+
 
     function loadFile() {
         const textInput = document.getElementById('text-input');

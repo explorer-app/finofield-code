@@ -8,86 +8,42 @@
              $this->con = $con;
     }
 
-    public function generateBlogFileName($title) {
+   public function getBlogs() {
 
-      $slug = preg_replace('/[^a-zA-Z0-9]+/', '-', strtolower($title));
+       $stmt = $this->con->prepare("select * from blogs");
+       $stmt->execute();
 
-      $randomNumber = rand(1000,9999);
+       $result = $stmt->get_result();
+       $dataArray = array();
 
-      return $slug."-" .$randomNumber . ".php";
-    }
+       if($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+          $dataArray[] = $row;
+        }
+       }
 
+       $stmt->close();
 
+       return $dataArray;
+   }
 
+   public function getBlogById($id) {
+    $stmt = $this->con->prepare("SELECT * FROM blogs WHERE blog_id = ?");
+    $stmt->bind_param("i", $id);
+    $stmt->execute();
     
-
-      public function saveBlogDetails($title, $description, $image) {
-
-         // Ensure you are using the full $_FILES array
-         $imagePath = "../assets/blog_images/" . basename($image['name']);
-         move_uploaded_file($image['tmp_name'], $imagePath);
-      
-         // Generate a unique file name for the blog
-         $blogFileName = $this->generateBlogFileName($title);
-         $blogFilePath = "../assets/blogs/" . $blogFileName;
-      
-         // Prepare the SQL statement
-         $stmt = $this->con->prepare("INSERT INTO blogs (blog_title, blog_description, blog_image, blog_filename) VALUES (?, ?, ?, ?)");
-         $stmt->bind_param("ssss", $title, $description, $imagePath, $blogFileName);
-         $stmt->execute();
-      
-         return [
-           "id" => $this->con->insert_id,
-           "file" => $blogFileName
-         ];
-      }
-   
-
-
-    public function saveBlogContent($id, $content) {
-      $stmt= $this->con->prepare("select * from blogs where id = ?");
-      $stmt->bind_param("i",$id);
-      $stmt->execute();
-
-      $result = $stmt->get_result();
-      $blog = $result->fetch_assoc();
-
-
-      if($blog) {
-         $blogFilePath = $blog['blog_filename'];
-         $htmlContent =  "<?php
-         \$title = '{$blog['blog_title']}';
-         \$description = '{$blog['blog_description']}';
-         \$imagePath = '../{$blog['blog_image']}';
-
-         ?>
-
-         <!DOCTYPE html>
-            <html lang='en'>
-            <head>
-                <meta charset='UTF-8'>
-                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-                <title><?php echo \$title; ?></title>
-            </head>
-            <body>
-                <div class='single-post'>
-                  <div class='feature-img'>
-                    <img class='img-fluid' src='<?php echo \$imagePath; ?>' alt=''>
-                  </div>
-                  <div class='blog_details'>
-                    <h2 style='color: #2d2d2d;'><?php echo \$title; ?></h2>
-                    <ul class='blog-info-link mt-3 mb-4'>
-                      <li><i class='fa fa-user'></i> Author</li>
-                      <li><i class='fa fa-eye'></i> 03 Views</li>
-                    </ul>
-                    <p class='excert'><?php echo \$description; ?></p>
-                    <div><?php echo \"$content\"; ?></div>
-                  </div>
-                </div>
-            </body>
-            </html> ";  
-      }
+    // Fetch the result
+    $result = $stmt->get_result();
+    
+    // Check if a row exists and fetch it as an associative array
+    if ($result->num_rows > 0) {
+        return $result->fetch_assoc(); // Return the single blog row
+    } else {
+        return null; // Return null if no blog is found
     }
+}
+
+   
  }
 
 

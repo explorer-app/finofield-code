@@ -1,12 +1,13 @@
 <?php
 
-// include("../models/UserModel.php");
-//  include("../controllers/DatabaseController.php");
+include("../database/DbConnection.php");
+include("../models/BlogModel.php");
 
-//  $db = new DatabaseController();
-//  $con = $db->getConnection();
-//  $usermodel = new UserModel($con);
-//  $data = $usermodel->getData();
+$db = new DbConnection();
+$con = $db->getConnection();
+
+$blogModel = new BlogModel($con);
+$data = $blogModel->getBlogs();
 
 ?>
 
@@ -77,34 +78,53 @@
                 <div class="activity-data">
                     <div class="data names">
                         <span class="data-title">Blogs Name</span>
-                        <span class="data-list"> <img src="./images/profile.jpg" alt=""> Arjun Tripathi</span>
-                        <span class="data-list"> <img src="./images/profile.jpg" alt=""> Rahul Durgapal</span>
-                        <span class="data-list"> <img src="./images/profile.jpg" alt=""> Sagar Chuhan</span>
-                        <span class="data-list"> <img src="./images/profile.jpg" alt=""> Niket Narayan</span>
+
+                        <?php
+                                for ($i = 0; $i < count($data); $i++) {
+                                    echo "<span class='data-list'> 
+                                        <img src='../assets/blog_images/{$data[$i]['blog_image']}' alt=''> 
+                                         {$data[$i]['blog_title']} 
+                                              </span>";
+                                 }
+                         ?>
                     </div>
 
                     <div class="data joined">
                         <span class="data-title">Created-Date</span>
-                        <span class="data-list">12-dec-2023</span>
-                        <span class="data-list">11-dec-2023</span>
-                        <span class="data-list">10-dec-2023</span>
-                        <span class="data-list">09-dec-2023</span>
+
+                        <?php
+                          
+                          for($i=0;$i<sizeof($data);$i++) {
+                            echo "<span class='data-list'>".$data[$i]['created_at']. "</span>";
+                          }
+
+                        ?>
                     </div>
 
                     <div class="data emails status">
                         <span class="data-title">Modify</span>
-                        <span class="data-list">Click</span>
-                        <span class="data-list">Click</span>
-                        <span class="data-list">Click</span>
-                        <span class="data-list">Click</span>
+                        <?php
+                            
+                            for ($i = 0; $i < count($data); $i++) {
+                                echo "<a href='blog/modify.php?blog_id={$data[$i]['blog_id']}' class='data-list' style='display: inline-block;'>Click</a>";
+                            }
+                            
+
+
+                         ?>
+                        
                     </div>
 
                     <div class="data status">
                         <span class="data-title">View</span>
-                        <span class="data-list">View</span>
-                        <span class="data-list">View</span>
-                        <span class="data-list">View</span>
-                        <span class="data-list">View</span>
+                        <?php
+                            
+                            for($i=0;$i<sizeof($data);$i++) {
+                                echo "<span class='data-list'>view</span>";
+                            }
+
+
+                         ?>
                     </div>
                 </div>
             </div>

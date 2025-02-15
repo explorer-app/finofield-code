@@ -27,7 +27,7 @@
 
         <div class="container">
             <!-- Blog Form -->
-            <form action="../controllers/BlogController.php?action=blog_upload" method="post" enctype="multipart/form-data">
+            <form action="../admin/blog/index.php" method="post" enctype="multipart/form-data">
     <div class="form-container">
         <h2>Blog Form</h2>
         

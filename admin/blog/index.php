@@ -5,10 +5,35 @@
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
 
-    $topic_name = isset($_POST['topic_name']) ? $_POST['topic_name'] : "";
-    $description = isset($_POST['description']) ? $_POST['description'] : "";
-    $blog_image = isset($_POST['blog_image']) ? $_POST['blog_image'] : "";
+//    if(!isset($_POST['blog_button'])) {
+//     header("location: ../../index.php");
+//    }
+
+    $blog_title = isset($_POST['blog_title']) ? $_POST['blog_title'] : "";
+    $blog_description = isset($_POST['blog_description']) ? $_POST['blog_description'] : "";
+    $blog_image = isset($_FILES['blog_image']) ? $_FILES['blog_image'] : "";
+
+
+
+if ($blog_image) {
+    // Read the image as Base64
+    $imagePath = $blog_image["tmp_name"];
+    $encodedImage = base64_encode(file_get_contents($imagePath));
+}
 ?>
+
+<script>
+    console.log("hello world");
+    
+    var blogImage = {
+        name: "<?php echo isset($blog_image['name']) ? $blog_image['name'] : ''; ?>",
+        type: "<?php echo isset($blog_image['type']) ? $blog_image['type'] : ''; ?>",
+        data: "<?php echo $encodedImage; ?>"
+    };
+
+    console.log("Blog Image:", blogImage);
+</script>
+
 
 
 <!DOCTYPE html>
@@ -45,7 +70,8 @@
 </header>
     <div class="container">
         <div class="save">
-            <input type="text" id="fileName" value="index.html" placeholder="Enter a File Name">
+            <input type="text" id="fileName" value="<?php echo $blog_title; ?>">
+            <textarea name="" id="description" style="display: none;"><?php   echo $blog_description  ?></textarea>
             <input type="file" id="fileInput" style="display: none;">
             <button id="save" class="saveFile"><i class="fa fa-save"> SAVE</i></button>
         </div>
@@ -361,27 +387,77 @@
 
 
 
+    // saveButton.addEventListener("click", () => {
+    //     let contentToSave = `<div class="blog_details">${document.getElementById('text-input').innerHTML}</div>`;
+
+    //     const fileName = document.getElementById('fileName').value + ".html";
+    //     const topic = document.getElementById('fileName').value;
+    //     const blog_title = '<?php //echo $blog_title; ?>';
+    //     const blog_description = '<?php //echo $blog_description; ?>';
+    //     const blog_image = '<?php //echo $blog_image; ?>';
+
+    //     const xhr = new XMLHttpRequest();
+    //     xhr.open('POST', 'save.php', true);
+    //     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    //     xhr.onreadystatechange = function () {
+    //         if (xhr.readyState === 4 && xhr.status === 200) {
+    //             alert(xhr.responseText); // Show success/failure message
+    //             location.replace("../../blog.php");
+    //         }
+    //     };
+
+    //     xhr.send(`content=${encodeURIComponent(contentToSave)}&blog_title=${encodeURIComponent(blog_title)}&blog_description=${encodeURIComponent(blog_description)}&blog_image=${encodeURIComponent(blog_image)}&conditon=${encodeURIComponent('save')}`);
+    // });
+
+
     saveButton.addEventListener("click", () => {
-        let contentToSave = `<div class="blog_details">${document.getElementById('text-input').innerHTML}</div>`;
+    let contentToSave = `<div class="blog_details">${document.getElementById('text-input').innerHTML}</div>`;
 
-        const fileName = document.getElementById('fileName').value + ".html";
-        const topic = document.getElementById('fileName').value;
-        const topic_name = '<?php echo $topic_name; ?>';
-        const description = '<?php echo $description; ?>';
-        const blog_image = '<?php echo $blog_image; ?>';
+    if (!blogImage.data) {
+        alert("No image found!");
+        return;
+    }
 
-        const xhr = new XMLHttpRequest();
-        xhr.open('POST', 'save.php', true);
-        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === 4 && xhr.status === 200) {
-                alert(xhr.responseText); // Show success/failure message
-                location.replace("../../blog.php");
-            }
-        };
+    // Convert Base64 to Blob
+    function base64ToBlob(base64, mimeType) {
+        let byteCharacters = atob(base64);
+        let byteNumbers = new Array(byteCharacters.length);
+        for (let i = 0; i < byteCharacters.length; i++) {
+            byteNumbers[i] = byteCharacters.charCodeAt(i);
+        }
+        let byteArray = new Uint8Array(byteNumbers);
+        return new Blob([byteArray], { type: mimeType });
+    }
 
-        xhr.send(`content=${encodeURIComponent(contentToSave)}&topicname=${encodeURIComponent(topic_name)}&description=${encodeURIComponent(description)}&blog_image=${encodeURIComponent(blog_image)}`);
-    });
+    let blob = base64ToBlob(blogImage.data, blogImage.type);
+    let file = new File([blob], blogImage.name, { type: blogImage.type });
+
+    console.log("Generated File:", file);
+
+    // Create FormData
+    const formData = new FormData();
+    formData.append("content", contentToSave);
+    formData.append("blog_title", document.getElementById('fileName').value);
+    formData.append("blog_description", document.getElementById('description').value);
+    formData.append("blog_image", file);
+    formData.append("condition", "save");
+
+    // Send AJAX request
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", "save.php", true);
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            console.log("Server Response:", xhr.responseText);
+            alert(xhr.responseText);
+            location.replace("../blogs.php");
+        }
+    };
+
+    xhr.send(formData); // Send form data with file
+});
+
+
 
         
 

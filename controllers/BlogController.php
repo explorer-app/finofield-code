@@ -7,6 +7,8 @@ $db = new DbConnection();
 $con = $db->getConnection();
 $blogModel = new BlogModel($con);
 
+session_start();
+
 $action = $_GET['action'];
 
 if ($action === "blog_upload" && isset($_POST['blog_button'])) {
@@ -15,13 +17,16 @@ if ($action === "blog_upload" && isset($_POST['blog_button'])) {
 
     if (isset($_FILES["blog_image"]) && $_FILES["blog_image"]["error"] === UPLOAD_ERR_OK) {
         // Call the saveBlogDetails method with the full $_FILES["blog_image"]
-        $result = $blogModel->saveBlogDetails($title, $description, $_FILES["blog_image"]);
 
-        if ($result) {
-            header("Location: ../admin/blog/index.php?id=" . $result['file']);
-        } else {
-            echo "Failed to save blog.";
-        }
+        $data = [$title,$description,$_FILES['blog_image']];
+        $_SESSION['data'] =$data;
+      //  $result = $blogModel->saveBlogDetails($title, $description, $_FILES["blog_image"]);
+
+        // if ($result) {
+        //     header("Location: ../admin/blog/index.php?id=" . $result['file']);
+        // } else {
+        //     echo "Failed to save blog.";
+        // }
     } else {
         echo "No image uploaded or there was an error with the file.";
     }
