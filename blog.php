@@ -1,3 +1,22 @@
+
+<?php
+
+if(!isset($_GET['blog_view_id'])) {
+  header("location: index.php");
+}
+
+include("database/DbConnection.php");
+include("models/BlogModel.php");
+$db = new DbConnection();
+$con = $db->getConnection();
+
+$id = $_GET['blog_view_id'];
+$blogModel = new BlogModel($con);
+$blog = $blogModel->getBlogById($id);
+
+
+?>
+
 <!doctype html>
 <html class="no-js" lang="zxx">
 
@@ -43,15 +62,15 @@
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                  <li class="breadcrumb-item"><a href="#">Blogs</a></li>
-                  <li class="breadcrumb-item"><a href="#">{Blog Name / ID}</a></li>
+                  <li class="breadcrumb-item"><a href="#"><?=  $blog['blog_title'];  ?></a></li>
+                  <li class="breadcrumb-item"><a href="#"><?= $blog['blog_title'];   ?></a></li>
                 </ol>
               </nav>
             </div>
 
             <!-- breadcrumb End -->
             <div class="hero-img">
-              <img src="./assets/img/hero/h1_hero2.png" alt="" data-animation="fadeInRight" data-transition-duration="5s">
+            <img src="<?= 'assets/blog_images/' . $blog['blog_image']; ?>" alt="" data-animation="fadeInRight" data-transition-duration="5s">
             </div>
           </div>
         </div>
@@ -64,7 +83,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 posts-list">
-            <?php include('./blogs/blog1.html') ?>
+          <?php include('assets/blogs/' . $blog['blog_filename']); ?>
 
 
             <!-- <div class="comments-area">

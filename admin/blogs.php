@@ -120,7 +120,7 @@ $data = $blogModel->getBlogs();
                         <?php
                             
                             for($i=0;$i<sizeof($data);$i++) {
-                                echo "<span class='data-list'>view</span>";
+                                echo "<a target='_blank' href='../blog.php?blog_view_id={$data[$i]['blog_id']}' class='data-list' style='display: inline-block;'>view</a>";
                             }
 
 
