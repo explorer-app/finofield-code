@@ -82,7 +82,6 @@ $data = $blogModel->getBlogs();
                         <?php
                                 for ($i = 0; $i < count($data); $i++) {
                                     echo "<span class='data-list'> 
-                                        <img src='../assets/blog_images/{$data[$i]['blog_image']}' alt=''> 
                                          {$data[$i]['blog_title']} 
                                               </span>";
                                  }

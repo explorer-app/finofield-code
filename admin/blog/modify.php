@@ -62,7 +62,7 @@
 </header>
     <div class="container">
         <div class="save">
-            <input type="text" id="fileName" value="<?php echo $blog_title;      ?>">
+            <input type="text" id="fileName" value="<?php echo $blog_title;?>">
             <input type="file" id="fileInput" style="display: none;">
             <button id="update" class="updateFile"><i class="fa fa-save"> Update</i></button>
         </div>
@@ -383,9 +383,9 @@
 
     const fileName = document.getElementById('fileName').value + ".html";
     const topic = document.getElementById('fileName').value;
-    const description = "<?= $description ?>"; // Corrected PHP usage
-    const blog_image = "<?= $blog_image ?>";
-    const blog_id = "<?= $blog_id ?>"; // Corrected PHP variable usage
+    const description = `<?= $description ?>`; // Corrected PHP usage
+    const blog_image = `<?= $blog_image ?>`;
+    const blog_id = `<?= $blog_id ?>`; // Corrected PHP variable usage
 
     const xhr = new XMLHttpRequest();
     xhr.open('POST', 'save.php', true);
@@ -405,6 +405,36 @@
     function loadFile() {
         const textInput = document.getElementById('text-input');
         textInput.innerHTML = <?= json_encode($html_content, JSON_HEX_TAG) ?>;
+
+        // Show spinner while images are loading
+        const loadingSpinner = document.getElementById('loading-spinner');
+        loadingSpinner.style.display = 'block';
+
+        // Wait for all images to load before hiding the spinner
+        const images = textInput.querySelectorAll('img');
+        let loadedImages = 0;
+
+        if (images.length === 0) {
+            // No images, immediately hide spinner
+            loadingSpinner.style.display = 'none';
+        } else {
+            images.forEach(img => {
+                img.onload = () => {
+                    loadedImages++;
+                    if (loadedImages === images.length) {
+                        loadingSpinner.style.display = 'none';
+                    }
+                };
+
+                // Handle broken image loading
+                img.onerror = () => {
+                    loadedImages++;
+                    if (loadedImages === images.length) {
+                        loadingSpinner.style.display = 'none';
+                    }
+                };
+            });
+        }
     }
 
     window.addEventListener('beforeunload', (e) => {

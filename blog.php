@@ -70,7 +70,8 @@ $blog = $blogModel->getBlogById($id);
 
             <!-- breadcrumb End -->
             <div class="hero-img">
-            <img src="<?= 'assets/blog_images/' . $blog['blog_image']; ?>" alt="" data-animation="fadeInRight" data-transition-duration="5s">
+            <img src="assets/img/hero/h1_hero2.png" alt="" data-animation="fadeInRight"
+            data-transition-duration="5s">
             </div>
           </div>
         </div>
@@ -83,7 +84,19 @@ $blog = $blogModel->getBlogById($id);
       <div class="container">
         <div class="row">
           <div class="col-lg-8 posts-list">
-          <?php include('assets/blogs/' . $blog['blog_filename']); ?>
+          <div class="feature-img">
+    <!-- <img class="img-fluid" src="./assets/img/blog/single_blog_1.png" alt=""> -->
+  </div>
+  <div class="blog_details">
+    <h1 style="color: #2d2d2d; font-size: 50px; font-weight: bolder; word-wrarp: wrap"><?= $blog['blog_title']; ?></h1>
+    <br>
+    <img class="img-fluid" src="<?= 'assets/blog_images/' . $blog['blog_image']; ?>" alt="" data-animation="fadeInRight" data-transition-duration="5s">
+    <ul class="blog-info-link mt-3 mb-4">
+      <li><i class="fa fa-user"></i> Binod Gupta</li>
+      <li><i class="fa fa-eye"></i> <?= $id?> Views</li>
+    </ul>
+    <?php include('assets/blogs/' . $blog['blog_filename']); ?>
+</div>
 
 
             <!-- <div class="comments-area">
