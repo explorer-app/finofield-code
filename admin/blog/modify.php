@@ -10,7 +10,6 @@ include("../../models/BlogModel.php");
 if (!isset($_POST['blog_id'])) {
     die("Blog ID is missing.");
 }
-
 $blog_id = $_POST['blog_id']; // Retrieve blog_id from POST
 $blog_title = isset($_POST['blog_title']) ? $_POST['blog_title'] : "";
 $blog_description = isset($_POST['blog_description']) ? $_POST['blog_description'] : "";
@@ -20,20 +19,12 @@ $con = $db->getConnection();
 
 $blogModel = new BlogModel($con);
 $blog = $blogModel->getBlogById($blog_id); // Use POST blog_id to fetch the blog content
-
-if (!$blog) {
-    die("Blog not found.");
-}
-
-// Only set blog_image if it exists
-if (!empty($blog['blog_image'])) {
-    $blog_image = '../../assets/blog_images/' . $blog['blog_image'];
-}
+$blog_image = isset($_FILES['blog_image']) ? $_FILES['blog_image'] : [];
 
 // Ensure blog_filename exists before trying to read it
 if (!empty($blog['blog_filename'])) {
     $html_url = '../../assets/blogs/' . $blog['blog_filename'];
-
+    
     // Check if the file exists and is not a directory
     if (file_exists($html_url) && !is_dir($html_url)) {
         $html_content = file_get_contents($html_url);
@@ -44,8 +35,24 @@ if (!empty($blog['blog_filename'])) {
     $html_content = ""; // Default to empty content
 }
 
+// Only process the image if it’s uploaded without errors
+if (!empty($blog_image) && isset($blog_image['tmp_name']) && is_uploaded_file($blog_image['tmp_name'])) {
+    // Read the image as Base64
+    $imagePath = $blog_image["tmp_name"];
+    $encodedImage = base64_encode(file_get_contents($imagePath));
+} else {
+    $encodedImage = ""; // No image uploaded
+}
+
 // Now you can use $blog_title, $blog_description, and $html_content in your form or further processing
 ?>
+<script>    
+    var blogImage = {
+        name: "<?php echo isset($blog_image['name']) ? $blog_image['name'] : ''; ?>",
+        type: "<?php echo isset($blog_image['type']) ? $blog_image['type'] : ''; ?>",
+        data: "<?php echo $encodedImage; ?>"
+    };
+</script>
 
 
 <!DOCTYPE html>
@@ -401,27 +408,43 @@ if (!empty($blog['blog_filename'])) {
     updateButton.addEventListener("click", () => {
         let contentToSave = document.getElementById('text-input').innerHTML;
 
+        // Create FormData object and append the necessary fields
         const formData = new FormData();
         formData.append("content", contentToSave);
         formData.append("blog_title", `<?=$blog_title?>`);
         formData.append("blog_description", `<?= $blog_description?>`);
-        formData.append("blog_id", `<?= $blog_id ?>`); // Ensure this variable is set server-side
+        formData.append("blog_id", `<?= $blog_id ?>`);
 
-        // Conditionally append the new image only if one is selecte
+        // If the image is available and valid, append it
+        if (blogImage && blogImage.data && blogImage.type) {
+            function base64ToBlob(base64, mimeType) {
+                let byteCharacters = atob(base64);
+                let byteNumbers = new Array(byteCharacters.length);
+                for (let i = 0; i < byteCharacters.length; i++) {
+                    byteNumbers[i] = byteCharacters.charCodeAt(i);
+                }
+                let byteArray = new Uint8Array(byteNumbers);
+                return new Blob([byteArray], { type: mimeType });
+            }
 
+            let blob = base64ToBlob(blogImage.data, blogImage.type);
+            let file = new File([blob], blogImage.name, { type: blogImage.type });
+            formData.append("blog_image", file);
+        }
+
+        // Send the request to the server
         const xhr = new XMLHttpRequest();
-        xhr.open("POST", "save.php", true);
+        xhr.open("POST", "manage.php", true);
         xhr.onreadystatechange = function () {
             if (xhr.readyState === 4 && xhr.status === 200) {
-                alert(xhr.responseText);
+                const response = JSON.parse(xhr.responseText);
+                // Access the message and log it
+                alert(response.message);
                 location.replace("../blogs.php");
             }
         };
-        xhr.send(formData); // Send FormData (with or without new image)
+        xhr.send(formData);
     });
-
-
-
 
     function loadFile() {
         const textInput = document.getElementById('text-input');

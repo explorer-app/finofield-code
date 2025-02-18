@@ -75,6 +75,7 @@
 </form>
 
 
+
             <!-- Blog Preview -->
             <div class="preview-container">
                 <h2>Preview</h2>
@@ -95,10 +96,36 @@
                     </div>
                 </div>
             </div>
+            
         </div>
+
+        <button class="delete-btn" onclick="deleteBlog()">Delete blog</button>
     </section>
     <script src="../assets/admin_js/script.js" defer></script>
     <script>
+        function deleteBlog() {
+            fetch('./blog/manage.php', {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: `blog_id=<?= $blog_id ?>`
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert("Blog deleted successfully!");
+                    window.location.href = "./blogs.php"; // Redirect to blogs page
+                } else {
+                    alert("Failed to delete the blog: " + data.message);
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                alert("An error occurred while deleting the blog.");
+            });
+        }
+
         // Set current date
         function getCurrentDate() {
             const today = new Date();

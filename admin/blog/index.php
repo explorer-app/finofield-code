@@ -434,10 +434,12 @@ if ($blog_image) {
         formData.append("blog_image", file);
 
         const xhr = new XMLHttpRequest();
-        xhr.open("POST", "save.php", true);
+        xhr.open("POST", "manage.php", true);
         xhr.onreadystatechange = function () {
             if (xhr.readyState === 4 && xhr.status === 200) {
-                alert(xhr.responseText);
+                const response = JSON.parse(xhr.responseText);
+                // Access the message and log it
+                alert(response.message);
                 location.replace("../blogs.php");
             }
         };

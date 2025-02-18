@@ -400,6 +400,17 @@ nav.close ~ .panel .top{
     text-decoration: none;
 }
 
+button.delete-btn {
+    align-items: center;
+    color: white;
+    background-color: red;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+}
+
 @media (max-width: 1000px) {
     nav{
         width: 73px;
