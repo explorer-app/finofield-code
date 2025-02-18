@@ -1,30 +1,50 @@
-<?php 
+<?php
+error_reporting(E_WARNING | E_NOTICE);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
 
-    error_reporting(E_WARNING|E_NOTICE);
-    ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
-    error_reporting(E_ALL);
+include("../../database/DbConnection.php");
+include("../../models/BlogModel.php");
 
-    include("../../database/DbConnection.php");
-    include("../../models/BlogModel.php");
+// Ensure blog_id is retrieved from POST
+if (!isset($_POST['blog_id'])) {
+    die("Blog ID is missing.");
+}
 
-    if(!isset($_GET['blog_id'])) {
-        header("location: ../../index.php");
+$blog_id = $_POST['blog_id']; // Retrieve blog_id from POST
+$blog_title = isset($_POST['blog_title']) ? $_POST['blog_title'] : "";
+$blog_description = isset($_POST['blog_description']) ? $_POST['blog_description'] : "";
+
+$db = new DbConnection();
+$con = $db->getConnection();
+
+$blogModel = new BlogModel($con);
+$blog = $blogModel->getBlogById($blog_id); // Use POST blog_id to fetch the blog content
+
+if (!$blog) {
+    die("Blog not found.");
+}
+
+// Only set blog_image if it exists
+if (!empty($blog['blog_image'])) {
+    $blog_image = '../../assets/blog_images/' . $blog['blog_image'];
+}
+
+// Ensure blog_filename exists before trying to read it
+if (!empty($blog['blog_filename'])) {
+    $html_url = '../../assets/blogs/' . $blog['blog_filename'];
+
+    // Check if the file exists and is not a directory
+    if (file_exists($html_url) && !is_dir($html_url)) {
+        $html_content = file_get_contents($html_url);
+    } else {
+        $html_content = ""; // Set empty content if the file is missing or invalid
     }
+} else {
+    $html_content = ""; // Default to empty content
+}
 
-    $db = new DbConnection();
-    $con = $db->getConnection();
-
-    $blogModel = new BlogModel($con);
-    $blog = $blogModel->getBlogById($_GET['blog_id']);
-
-    $blog_id = $blog['blog_id'];
-    $blog_title = $blog['blog_title'];
-    $blog_description = $blog['blog_description'];
-    $blog_image = $blog['blog_image'];
-
-    $html_url = '../../assets/blogs/'.$blog['blog_filename'];
-    $html_content = file_get_contents($html_url);
+// Now you can use $blog_title, $blog_description, and $html_content in your form or further processing
 ?>
 
 
@@ -379,62 +399,47 @@
 
 
     updateButton.addEventListener("click", () => {
-    let contentToSave = document.getElementById('text-input').innerHTML;
+        let contentToSave = document.getElementById('text-input').innerHTML;
 
-    const fileName = document.getElementById('fileName').value + ".html";
-    const topic = document.getElementById('fileName').value;
-    const description = `<?= $description ?>`; // Corrected PHP usage
-    const blog_image = `<?= $blog_image ?>`;
-    const blog_id = `<?= $blog_id ?>`; // Corrected PHP variable usage
+        const formData = new FormData();
+        formData.append("content", contentToSave);
+        formData.append("blog_title", `<?=$blog_title?>`);
+        formData.append("blog_description", `<?= $blog_description?>`);
+        formData.append("blog_id", `<?= $blog_id ?>`); // Ensure this variable is set server-side
 
-    const xhr = new XMLHttpRequest();
-    xhr.open('POST', 'save.php', true);
-    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        // Conditionally append the new image only if one is selecte
 
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            alert(xhr.responseText); // Show a message indicating success or failure
-            location.replace("../../blogs.php");
-        }
-    };
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", "save.php", true);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                alert(xhr.responseText);
+                location.replace("../blogs.php");
+            }
+        };
+        xhr.send(formData); // Send FormData (with or without new image)
+    });
 
-    xhr.send(`content=${encodeURIComponent(contentToSave)}&topicname=${encodeURIComponent(topic)}&description=${encodeURIComponent(description)}&blog_image=${encodeURIComponent(blog_image)}&id=${encodeURIComponent(blog_id)}`);
-});
+
 
 
     function loadFile() {
         const textInput = document.getElementById('text-input');
         textInput.innerHTML = <?= json_encode($html_content, JSON_HEX_TAG) ?>;
 
-        // Show spinner while images are loading
-        const loadingSpinner = document.getElementById('loading-spinner');
-        loadingSpinner.style.display = 'block';
-
         // Wait for all images to load before hiding the spinner
         const images = textInput.querySelectorAll('img');
         let loadedImages = 0;
-
-        if (images.length === 0) {
-            // No images, immediately hide spinner
-            loadingSpinner.style.display = 'none';
-        } else {
             images.forEach(img => {
                 img.onload = () => {
                     loadedImages++;
-                    if (loadedImages === images.length) {
-                        loadingSpinner.style.display = 'none';
-                    }
                 };
 
                 // Handle broken image loading
                 img.onerror = () => {
                     loadedImages++;
-                    if (loadedImages === images.length) {
-                        loadingSpinner.style.display = 'none';
-                    }
                 };
             });
-        }
     }
 
     window.addEventListener('beforeunload', (e) => {

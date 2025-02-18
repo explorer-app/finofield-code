@@ -105,7 +105,7 @@ $data = $blogModel->getBlogs();
                         <?php
                             
                             for ($i = 0; $i < count($data); $i++) {
-                                echo "<a href='blog/modify.php?blog_id={$data[$i]['blog_id']}' class='data-list' style='display: inline-block;'>Click</a>";
+                                echo "<a href='./modify_blog.php?blog_id={$data[$i]['blog_id']}' class='data-list' style='display: inline-block;'>Click</a>";
                             }
                             
 

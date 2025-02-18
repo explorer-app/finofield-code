@@ -22,16 +22,12 @@ if ($blog_image) {
 }
 ?>
 
-<script>
-    console.log("hello world");
-    
+<script>    
     var blogImage = {
         name: "<?php echo isset($blog_image['name']) ? $blog_image['name'] : ''; ?>",
         type: "<?php echo isset($blog_image['type']) ? $blog_image['type'] : ''; ?>",
         data: "<?php echo $encodedImage; ?>"
     };
-
-    console.log("Blog Image:", blogImage);
 </script>
 
 
@@ -411,55 +407,43 @@ if ($blog_image) {
 
 
     saveButton.addEventListener("click", () => {
-    let contentToSave = `<div class="blog_details">${document.getElementById('text-input').innerHTML}</div>`;
+        let contentToSave = `<div class="blog_details">${document.getElementById('text-input').innerHTML}</div>`;
 
-    if (!blogImage.data) {
-        alert("No image found!");
-        return;
-    }
-
-    // Convert Base64 to Blob
-    function base64ToBlob(base64, mimeType) {
-        let byteCharacters = atob(base64);
-        let byteNumbers = new Array(byteCharacters.length);
-        for (let i = 0; i < byteCharacters.length; i++) {
-            byteNumbers[i] = byteCharacters.charCodeAt(i);
+        if (!blogImage.data) {
+            alert("No image found!");
+            return;
         }
-        let byteArray = new Uint8Array(byteNumbers);
-        return new Blob([byteArray], { type: mimeType });
-    }
 
-    let blob = base64ToBlob(blogImage.data, blogImage.type);
-    let file = new File([blob], blogImage.name, { type: blogImage.type });
-
-    console.log("Generated File:", file);
-
-    // Create FormData
-    const formData = new FormData();
-    formData.append("content", contentToSave);
-    formData.append("blog_title", document.getElementById('fileName').value);
-    formData.append("blog_description", document.getElementById('description').value);
-    formData.append("blog_image", file);
-    formData.append("condition", "save");
-
-    // Send AJAX request
-    const xhr = new XMLHttpRequest();
-    xhr.open("POST", "save.php", true);
-
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            console.log("Server Response:", xhr.responseText);
-            alert(xhr.responseText);
-            location.replace("../blogs.php");
+        function base64ToBlob(base64, mimeType) {
+            let byteCharacters = atob(base64);
+            let byteNumbers = new Array(byteCharacters.length);
+            for (let i = 0; i < byteCharacters.length; i++) {
+                byteNumbers[i] = byteCharacters.charCodeAt(i);
+            }
+            let byteArray = new Uint8Array(byteNumbers);
+            return new Blob([byteArray], { type: mimeType });
         }
-    };
 
-    xhr.send(formData); // Send form data with file
-});
+        let blob = base64ToBlob(blogImage.data, blogImage.type);
+        let file = new File([blob], blogImage.name, { type: blogImage.type });
 
+        const formData = new FormData();
+        formData.append("content", contentToSave);
+        formData.append("blog_title", document.getElementById('fileName').value);
+        formData.append("blog_description", document.getElementById('description').value);
+        formData.append("blog_image", file);
 
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", "save.php", true);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                alert(xhr.responseText);
+                location.replace("../blogs.php");
+            }
+        };
+        xhr.send(formData);
+    });
 
-        
 
     // // open a existing file to modify
     // openButton.addEventListener("click", () => {
