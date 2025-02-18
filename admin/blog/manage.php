@@ -74,9 +74,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
         exit;
     }
 
+    // Get the blog details (to retrieve file and image names)
+    $sql = "SELECT blog_image, blog_filename FROM blogs WHERE blog_id = '$blog_id'";
+    $result = mysqli_query($con, $sql);
+
+    if (!$result || mysqli_num_rows($result) === 0) {
+        echo json_encode(["success" => false, "message" => "Blog not found"]);
+        exit;
+    }
+
+    $blog = mysqli_fetch_assoc($result);
+    $imagePath = "../../assets/blog_images/" . $blog['blog_image'];
+    $contentPath = "../../assets/blogs/" . $blog['blog_filename'];
+
     // Delete the blog from the database
-    $sql = "DELETE FROM blogs WHERE blog_id = '$blog_id'";
-    if (mysqli_query($con, $sql)) {
+    $deleteSql = "DELETE FROM blogs WHERE blog_id = '$blog_id'";
+    if (mysqli_query($con, $deleteSql)) {
+        // Delete the image file if it exists
+        if (file_exists($imagePath)) {
+            unlink($imagePath); // Deletes the image
+        }
+
+        // Delete the content file if it exists
+        if (file_exists($contentPath)) {
+            unlink($contentPath); // Deletes the content file
+        }
+
         echo json_encode(["success" => true, "message" => "Blog deleted successfully"]);
     } else {
         echo json_encode(["success" => false, "message" => "Error deleting blog: " . mysqli_error($con)]);
