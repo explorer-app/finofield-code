@@ -436,13 +436,27 @@ if (!empty($blog_image) && isset($blog_image['tmp_name']) && is_uploaded_file($b
         const xhr = new XMLHttpRequest();
         xhr.open("POST", "manage.php", true);
         xhr.onreadystatechange = function () {
-            if (xhr.readyState === 4 && xhr.status === 200) {
-                const response = JSON.parse(xhr.responseText);
-                // Access the message and log it
-                alert(response.message);
-                location.replace("../blogs.php");
+            if (xhr.readyState === 4) {
+                try {
+                    if (xhr.status === 200) {
+                        const response = JSON.parse(xhr.responseText);
+                        if (response.success) {
+                            alert(response.message);
+                            location.replace("../blogs.php");
+                        } else {
+                            alert("Error: " + response.message);
+                        }
+                    } else {
+                        // Handle non-200 status
+                        console.error("HTTP Error: " + xhr.status + " " + xhr.statusText);
+                    }
+                } catch (e) {
+                    // Catch syntax errors and display the raw response for debugging
+                    console.error("Response is not valid JSON:", xhr.responseText);
+                }
             }
         };
+
         xhr.send(formData);
     });
 
