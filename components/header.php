@@ -1,3 +1,17 @@
+<?php
+
+include("./database/DbConnection.php");
+include("./models/ServiceModel.php");
+
+$db = new DbConnection();
+$con = $db->getConnection();
+
+$serviceModel = new ServiceModel($con);
+
+$data = $serviceModel->getLimitService();
+
+?>
+
 <div id="preloader-active">
     <div class="preloader d-flex align-items-center justify-content-center">
         <div class="preloader-inner position-relative">
@@ -33,12 +47,22 @@
                                             <li><a href="about.php">About</a></li>
                                             <li><a href="services.php">Services</a>
                                                 <ul class="submenu">
-                                                    <li><a href="service.php">1. Legal entity</a></li>
-                                                    <li><a href="service.php">2. Tax & Regulatory Advisory</a></li>
+
+                                                <?php
+
+                                                       for($i=0;$i<sizeof($data);$i++) {
+
+                                                      
+ 
+                                                         ?>
+                                                      <li><a href="service.php"><?= $data[$i]['service_name'];   ?></a></li>
+
+                                                    <?php  } ?>
+                                                    <!-- <li><a href="service.php">2. Tax & Regulatory Advisory</a></li>
                                                     <li><a href="service.php">3. Accounting / book-keeping</a></li>
                                                     <li><a href="service.php">4. IFRS conversion </a></li>
                                                     <li><a href="service.php">5. Representation </a></li>
-                                                    <li><a href="service.php">6. Others </a></li>
+                                                    <li><a href="service.php">6. Others </a></li> -->
                                                 </ul>
                                             </li>
                                             <li><a href="blogs.php">Blogs</a></li>

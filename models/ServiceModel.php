@@ -118,7 +118,28 @@ class ServiceModel {
 
     $stmt->close();
     }
+
+
+    public function getLimitService() {
+
+        $stmt = $this->con->prepare("select service_name from services limit 5");
+        $stmt->execute();
+
+        $result = $stmt->get_result();
+        $dataArray = array();
+
+        if($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+                $dataArray[] = $row;
+            }
+        }
+
+        $stmt->close();
+
+        return $dataArray;
+    }
 }
+
 
 
 

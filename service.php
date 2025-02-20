@@ -29,7 +29,25 @@
 
 <body>
     <!-- ? Preloader Start -->
-    <?php include('./components/header.php')?>
+
+    <?php 
+     $id = $_GET['service_id'];
+
+     if(!isset($id)) {
+        header("location: index.php");
+     }
+
+     include("database/DbConnection.php");
+     include("models/ServiceModel.php");
+
+     $db = new DbConnection();
+     $con = $db->getConnection();
+
+     $serviceModel = new ServiceModel($con);
+
+     $data = $serviceModel->getServiceById($id);
+    
+    include('./components/header.php')?>
     <main>
         <!--? slider Area Start-->
         <div class="slider-area slider-area2 slider-height2 position-relative"
@@ -73,20 +91,8 @@
                     </div>
                     <br>
                     <div class="about-more">
-                        <p>At present, most of the entities across the globe has presence in India in some form;
-                            be it manufacturing in India, running cost centers, developing IT products,
-                            selling goods manufactured in various parts of the globe.</p>
-                        <p class="pera-bottom">FinoField, established by a team professionals comprising Management
-                            Graduates,
-                            Chartered Accountants & Company secretaries, focuses on serving investors create business
-                            presence in India.
-                            It is a one stop firm which can help you establish your business starting from setting up
-                            entity to taking care of day-to-day accounting, taxation, regulatory issues, payroll
-                            services.
-                            The aim is to align the path of startups/businesses in such a manner that the investor could
-                            focus
-                            only on the core business and
-                            rest everything would be taken care by the team members in a seamless manner. </p>
+                        <p><?=  $data['service_brief_description'];  ?></p>
+                        <p class="pera-bottom"><?=  $data['service_description'];   ?></p>
 
                     </div>
                 </div>
@@ -95,7 +101,7 @@
             <!--Right Contents  -->
             <div class="col-12 col-md-6 text-center">
                 <div class="image">
-                    <img src="./assets/img/gallery/about-img2.png" alt="" class="img-fluid w-100">
+                    <img src="./assets/service_images/<?=  $data['service_image'];  ?>" alt="" class="img-fluid w-100">
                 </div>
             </div>
         </div>
