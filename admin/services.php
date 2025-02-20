@@ -92,7 +92,7 @@ include("../database/DbConnection.php");
                             <?php
                             
                             for ($i = 0; $i < count($data); $i++) {
-                                echo "<a href='./modify_blog.php?blog_id={$data[$i]['service_id']}' class='data-list' style='display: inline-block;'>Click</a>";
+                                echo "<a href='./service_modifier_update.php?service_id={$data[$i]['service_id']}' class='data-list' style='display: inline-block;'>Click</a>";
                             }
                             
 

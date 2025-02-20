@@ -12,7 +12,25 @@
 
 </head>
 <body>
-    <?php include("./header.php"); ?>
+    <?php
+
+    $service_id = $_GET['service_id'];
+    
+    if(!isset($service_id)) {
+        header("location: ../index.php");
+    }
+
+    include("../models/ServiceModel.php");
+    include("../database/DbConnection.php");
+
+    $db = new DbConnection();
+    $con = $db->getConnection();
+    $serviceModel = new ServiceModel($con);
+
+    $data = $serviceModel->getServiceById($service_id);
+
+
+    include("./header.php"); ?>
     <section class="panel">
     <div class="top">
             <i class="uil uil-bars sidebar-toggle"></i>
@@ -25,18 +43,20 @@
         </div>
     <div class="container">
         <h2>Create New Service</h2>
-        <form id="serviceForm" action="../controllers/ServiceController.php?action=service_add" method="POST" enctype="multipart/form-data">
+        <form id="serviceForm" action="../controllers/ServiceController.php?action=service_update" method="POST" enctype="multipart/form-data">
+
+           <input type="hidden"  value="<?=  $data['service_id'];  ?>" name="service_id" />
             <div class="input-field">
                 <label for="service-name">Service Name</label>
-                <input type="text" name="service_name" id="service-name" placeholder="Enter service name" required>
+                <input type="text" name="service_name" id="service-name" value="<?= $data['service_name'];  ?>" placeholder="Enter service name" required>
             </div>
             <div class="input-field">
                 <label for="brief-desc">Brief Description (Max 250 characters)</label>
-                <textarea id="brief-desc" name="brief_description" rows="3" placeholder="Enter brief description" maxlength="250" required></textarea>
+                <textarea id="brief-desc" name="brief_description" rows="3" placeholder="Enter brief description" maxlength="250" required><?= $data['service_brief_description'];    ?></textarea>
             </div>
             <div class="input-field">
                 <label for="detailed-desc">Detailed Description (Max 1000 words)</label>
-                <textarea id="detailed-desc" name="detailed_description" rows="7" placeholder="Enter detailed description" required></textarea>
+                <textarea id="detailed-desc" name="detailed_description" rows="7" placeholder="Enter detailed description" required><?= $data['service_description'];   ?></textarea>
             </div>
             <div class="input-field">
                 <label for="service-img">Upload Image</label>
