@@ -122,7 +122,7 @@ class ServiceModel {
 
     public function getLimitService() {
 
-        $stmt = $this->con->prepare("select service_name from services limit 5");
+        $stmt = $this->con->prepare("select service_id, service_name from services limit 5");
         $stmt->execute();
 
         $result = $stmt->get_result();

@@ -52,8 +52,6 @@ $data = $serviceModel->getLimitService();
                                                 <?php
 
                                                        for($i=0;$i<sizeof($data);$i++) {
-
-                                                        echo $data[$i]['service_id'];
  
                                                          ?>
                                                       <li><a href="service.php?service_id=<?=  $data[$i]['service_id'];  ?>">  <?= $data[$i]['service_name'];?> </a></li>
