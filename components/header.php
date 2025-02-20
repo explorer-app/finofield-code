@@ -1,13 +1,14 @@
 <?php
 
 include("./database/DbConnection.php");
-include("./models/ServiceModel.php");
+include("./models/ServiceModel.php");               
+include("./models/BlogModel.php");               
 
 $db = new DbConnection();
 $con = $db->getConnection();
 
 $serviceModel = new ServiceModel($con);
-
+$blogModel = new BlogModel($con);
 $data = $serviceModel->getLimitService();
 
 ?>
@@ -52,7 +53,7 @@ $data = $serviceModel->getLimitService();
 
                                                        for($i=0;$i<sizeof($data);$i++) {
 
-                                                      
+                                                        echo $data[$i]['service_id'];
  
                                                          ?>
                                                       <li><a href="service.php?service_id=<?=  $data[$i]['service_id'];  ?>">  <?= $data[$i]['service_name'];?> </a></li>

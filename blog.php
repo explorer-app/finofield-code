@@ -1,17 +1,3 @@
-
-<?php
-
-if(!isset($_GET['blog_view_id'])) {
-  header("location: index.php");
-}
-
-
-
-$id = $_GET['blog_view_id'];
-
-
-?>
-
 <!doctype html>
 <html class="no-js" lang="zxx">
 
@@ -41,11 +27,17 @@ $id = $_GET['blog_view_id'];
   <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
-<body>
-  <?php include('./components/header.php');
-  
-  $blog = $blogModel->getBlogById($id);
-  ?>
+<?php 
+     $id = $_GET['blog_view_id'];
+
+     if(!isset($id)) {
+        header("location: index.php");
+     }
+
+     include('./components/header.php');
+
+     $blog = $blogModel->getBlogById($id);
+?>
 
   <main>
     <!--? slider Area Start-->
