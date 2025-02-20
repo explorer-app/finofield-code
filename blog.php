@@ -5,14 +5,9 @@ if(!isset($_GET['blog_view_id'])) {
   header("location: index.php");
 }
 
-include("database/DbConnection.php");
-include("models/BlogModel.php");
-$db = new DbConnection();
-$con = $db->getConnection();
+
 
 $id = $_GET['blog_view_id'];
-$blogModel = new BlogModel($con);
-$blog = $blogModel->getBlogById($id);
 
 
 ?>
@@ -47,7 +42,10 @@ $blog = $blogModel->getBlogById($id);
 </head>
 
 <body>
-  <?php include('./components/header.php')?>
+  <?php include('./components/header.php');
+  
+  $blog = $blogModel->getBlogById($id);
+  ?>
 
   <main>
     <!--? slider Area Start-->
