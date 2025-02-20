@@ -25,22 +25,22 @@
         </div>
     <div class="container">
         <h2>Create New Service</h2>
-        <form id="serviceForm">
+        <form id="serviceForm" action="../controllers/ServiceController.php?action=service_add" method="POST" enctype="multipart/form-data">
             <div class="input-field">
                 <label for="service-name">Service Name</label>
-                <input type="text" id="service-name" placeholder="Enter service name" required>
+                <input type="text" name="service_name" id="service-name" placeholder="Enter service name" required>
             </div>
             <div class="input-field">
                 <label for="brief-desc">Brief Description (Max 250 characters)</label>
-                <textarea id="brief-desc" rows="3" placeholder="Enter brief description" maxlength="250" required></textarea>
+                <textarea id="brief-desc" name="brief_description" rows="3" placeholder="Enter brief description" maxlength="250" required></textarea>
             </div>
             <div class="input-field">
                 <label for="detailed-desc">Detailed Description (Max 1000 words)</label>
-                <textarea id="detailed-desc" rows="7" placeholder="Enter detailed description" required></textarea>
+                <textarea id="detailed-desc" name="detailed_description" rows="7" placeholder="Enter detailed description" required></textarea>
             </div>
             <div class="input-field">
                 <label for="service-img">Upload Image</label>
-                <input type="file" id="service-img" accept="image/*" required>
+                <input type="file" name="service_image" id="service-img" accept="image/*" required>
             </div><br>
             <button type="submit" class="submit-btn">Submit</button>
         </form>
@@ -57,10 +57,10 @@
             }
         });
 
-        document.getElementById("serviceForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-            alert("Service Submitted Successfully!");
-        });
+        // document.getElementById("serviceForm").addEventListener("submit", function(event) {
+        //     event.preventDefault();
+        //     alert("Service Submitted Successfully!");
+        // });
     </script>
 </body>
 </html>

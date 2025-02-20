@@ -1,17 +1,17 @@
 <?php
 
-// if(isset($_GET['upload'])) {
-//     $msg = $_GET['upload'];
-//     echo "<script>alert('$msg');  </script>";
-// }
+if(isset($_GET['success'])) {
+    $msg = $_GET['success'];
+    echo "<script>alert('$msg');  </script>";
+}
 
-// include("../models/UserModel.php");
-// include("../controllers/DatabaseController.php");
+include("../models/ServiceModel.php");
+include("../database/DbConnection.php");
 
-//  $db = new DatabaseController();
-//  $con = $db->getConnection();
-//  $usermodel = new UserModel($con);
-//  $data = $usermodel->getData();
+ $db = new DbConnection();
+ $con = $db->getConnection();
+ $serviceModel = new ServiceModel($con);
+ $data = $serviceModel->getAllServices();
 
 ?>
 
@@ -65,34 +65,51 @@
                     <div class="activity-data">
                         <div class="data names">
                             <span class="data-title">Services Name</span>
-                            <span class="data-list"> <img src="./images/profile.jpg" alt=""> Arjun Tripathi</span>
-                            <span class="data-list"> <img src="./images/profile.jpg" alt=""> Rahul Durgapal</span>
-                            <span class="data-list"> <img src="./images/profile.jpg" alt=""> Sagar Chuhan</span>
-                            <span class="data-list"> <img src="./images/profile.jpg" alt=""> Niket Narayan</span>
+
+                            <?php
+                                for ($i = 0; $i < count($data); $i++) {
+                                    echo "<span class='data-list'> 
+                                         {$data[$i]['service_name']} 
+                                              </span>";
+                                 }
+                         ?>
+                           
                         </div>
     
                         <div class="data joined">
                             <span class="data-title">Created-Date</span>
-                            <span class="data-list">12-dec-2023</span>
-                            <span class="data-list">11-dec-2023</span>
-                            <span class="data-list">10-dec-2023</span>
-                            <span class="data-list">09-dec-2023</span>
+                            <?php
+                          
+                          for($i=0;$i<sizeof($data);$i++) {
+                            echo "<span class='data-list'>".$data[$i]['created_at']. "</span>";
+                          }
+
+                        ?>
                         </div>
     
                         <div class="data emails status">
                             <span class="data-title">Modify</span>
-                            <span class="data-list">Click</span>
-                            <span class="data-list">Click</span>
-                            <span class="data-list">Click</span>
-                            <span class="data-list">Click</span>
+                            <?php
+                            
+                            for ($i = 0; $i < count($data); $i++) {
+                                echo "<a href='./modify_blog.php?blog_id={$data[$i]['service_id']}' class='data-list' style='display: inline-block;'>Click</a>";
+                            }
+                            
+
+
+                         ?>
                         </div>
     
                         <div class="data status">
                             <span class="data-title">View</span>
-                            <span class="data-list">View</span>
-                            <span class="data-list">View</span>
-                            <span class="data-list">View</span>
-                            <span class="data-list">View</span>
+                            <?php
+                            
+                            for($i=0;$i<sizeof($data);$i++) {
+                                echo "<a target='_blank' href='../blog.php?blog_view_id={$data[$i]['service_id']}' class='data-list' style='display: inline-block;'>view</a>";
+                            }
+
+
+                         ?>
                         </div>
                     </div>
                 </div>
