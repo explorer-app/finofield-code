@@ -31,16 +31,15 @@
     <!-- ? Preloader Start -->
     <?php 
     
-    include("models/ServiceModel.php");
-    include("database/DbConnection.php");
+   
 
-    $db = new DbConnection();
-    $con = $db->getConnection();
-    $serviceModel = new ServiceModel($con);
-
-    $data = $serviceModel->getAllServices();
     
-    include('./components/header.php')?>
+
+    
+    
+    include('./components/header.php');
+    $data = $serviceModel->getAllServices();
+    ?>
 
     <main>
         <!--? slider Area Start-->

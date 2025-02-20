@@ -37,17 +37,13 @@
         header("location: index.php");
      }
 
-     include("database/DbConnection.php");
-     include("models/ServiceModel.php");
-
-     $db = new DbConnection();
-     $con = $db->getConnection();
-
-     $serviceModel = new ServiceModel($con);
+     include('./components/header.php');
 
      $data = $serviceModel->getServiceById($id);
+?>
+     
     
-    include('./components/header.php')?>
+   
     <main>
         <!--? slider Area Start-->
         <div class="slider-area slider-area2 slider-height2 position-relative"

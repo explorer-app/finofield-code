@@ -55,7 +55,7 @@ $data = $serviceModel->getLimitService();
                                                       
  
                                                          ?>
-                                                      <li><a href="service.php"><?= $data[$i]['service_name'];   ?></a></li>
+                                                      <li><a href="service.php?service_id=<?=  $data[$i]['service_id'];  ?>">  <?= $data[$i]['service_name'];?> </a></li>
 
                                                     <?php  } ?>
                                                     <!-- <li><a href="service.php">2. Tax & Regulatory Advisory</a></li>
