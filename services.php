@@ -29,14 +29,7 @@
 
 <body>
     <!-- ? Preloader Start -->
-    <?php 
-    
-   
-
-    
-
-    
-    
+    <?php     
     include('./components/header.php');
     $data = $serviceModel->getAllServices();
     ?>

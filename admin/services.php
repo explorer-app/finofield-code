@@ -105,7 +105,7 @@ include("../database/DbConnection.php");
                             <?php
                             
                             for($i=0;$i<sizeof($data);$i++) {
-                                echo "<a target='_blank' href='../blog.php?blog_view_id={$data[$i]['service_id']}' class='data-list' style='display: inline-block;'>view</a>";
+                                echo "<a target='_blank' href='../service.php?service_id={$data[$i]['service_id']}' class='data-list' style='display: inline-block;'>view</a>";
                             }
 
 
