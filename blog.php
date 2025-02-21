@@ -52,7 +52,7 @@
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                  <li class="breadcrumb-item"><a href="#"><?=  $blog['blog_title'];  ?></a></li>
+                  <li class="breadcrumb-item"><a href="#">Blogs</a></li>
                   <li class="breadcrumb-item"><a href="#"><?= $blog['blog_title'];   ?></a></li>
                 </ol>
               </nav>
