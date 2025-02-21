@@ -29,7 +29,10 @@
 
 <body>
     <!-- ? Preloader Start -->
-    <?php include('./components/header.php')?>
+    <?php include('./components/header.php');
+
+    
+    ?>
 
     <main>
         <!--? slider Area Start-->
@@ -73,16 +76,23 @@
                     </div>
                 </div>
                 <div class="services-active">
+
+                <?php
+
+                         for($i=0;$i<sizeof($data);$i++) {
+                           ?>
                     <div class="single-services section-over1 text-center">
                         <div class="services-img">
-                            <img src="assets/img/gallery/legal.png" alt="">
+                            <img src="./assets/service_images/<?=  $data[$i]['service_image'];  ?>" alt="" />
                             <div class="services-caption">
-                                <h3><a href="#">Setting up Legal Entity</a></h3>
-                                <a href="#" class="btn btn3">view</a>
+                                <h3><?=  $data[$i]['service_name'];   ?></h3>
+                                <a href="service.php?service_id=<?= $data[$i]['service_id'];  ?>" class="btn btn3">view</a>
                             </div>
                         </div>
                     </div>
-                    <div class="single-services section-over1 text-center">
+            <?php  }  ?>
+
+                    <!-- <div class="single-services section-over1 text-center">
                         <div class="services-img">
                             <img src="assets/img/gallery/taxr.png" alt="">
                             <div class="services-caption">
@@ -117,7 +127,7 @@
                                     <a href="#" class="btn btn3">view</a>
                                 </div>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="single-services section-over1 text-center">
                         <div class="services-img">
                             <img src="assets/img/gallery/oth.png" alt="">
