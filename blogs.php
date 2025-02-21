@@ -81,10 +81,10 @@
                             <article class="blog_item">
                                 <div class="blog_item_img">
                                     <img class="card-img rounded-0" src="./assets/blog_images/<?=$blogData[$i]['blog_image']?>" alt="">
-                                    <a href="#" class="blog_item_date">
+                                    <div class="blog_item_date">
                                         <h3><?= date('d', strtotime($blogData[$i]['updated_at']))?></h3>
                                         <p><?= date('M', strtotime($blogData[$i]['updated_at']))?></p>
-                                    </a>
+                                </div>
                                 </div>
                                 <div class="blog_details">
                                     <a class="d-inline-block" target="_blank" href="./blog.php?blog_view_id=<?=$blogData[$i]['blog_id']?>">
