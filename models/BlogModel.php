@@ -27,6 +27,26 @@
        return $dataArray;
    }
 
+   public function getBlogsByName($name) {
+        $name = "%" . $name . "%"; // Add wildcards for the LIKE query
+        $stmt = $this->con->prepare("SELECT * FROM blogs WHERE blog_title LIKE ?");
+        $stmt->bind_param("s", $name);
+        $stmt->execute();
+
+        $result = $stmt->get_result();
+        $dataArray = array();
+
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $dataArray[] = $row;
+            }
+        }
+
+        $stmt->close();
+
+        return $dataArray;
+    }
+
    public function getBlogById($id) {
     $stmt = $this->con->prepare("SELECT * FROM blogs WHERE blog_id = ?");
     $stmt->bind_param("i", $id);

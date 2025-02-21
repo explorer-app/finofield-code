@@ -31,8 +31,12 @@
     <!-- ? Preloader Start -->
     <?php 
         include('./components/header.php');
-
-        $blogData = $blogModel->getBlogs();
+        $query = isset($_GET['query']) ? $_GET['query'] : "";
+        if($query == ""){
+            $blogData = $blogModel->getBlogs();
+        }else{
+            $blogData = $blogModel->getBlogsByName($query);   
+        }
     ?>
 
     <main>
@@ -123,14 +127,14 @@
                     <div class="col-lg-4">
                         <div class="blog_right_sidebar">
                             <aside class="single_sidebar_widget search_widget">
-                                <form action="#">
+                                <form action="./blogs.php" method="get">
                                     <div class="form-group">
                                         <div class="input-group mb-3">
-                                            <input type="text" class="form-control" placeholder='Search Keyword'
+                                            <input type="text" name="query" value="<?=$query?>" class="form-control"  placeholder='Search Keyword'
                                                 onfocus="this.placeholder = ''"
                                                 onblur="this.placeholder = 'Search Keyword'">
                                             <div class="input-group-append">
-                                                <button class="btns" type="button"><i class="ti-search"></i></button>
+                                                <button class="btns" type="submit" ><i class="ti-search"></i></button>
                                             </div>
                                         </div>
                                     </div>

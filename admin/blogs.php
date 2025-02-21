@@ -6,8 +6,15 @@ include("../models/BlogModel.php");
 $db = new DbConnection();
 $con = $db->getConnection();
 
+$query = isset($_GET['query']) ? $_GET['query'] : "";
+
 $blogModel = new BlogModel($con);
 $data = $blogModel->getBlogs();
+if($query == ""){
+    $data = $blogModel->getBlogs();
+}else{
+    $data = $blogModel->getBlogsByName($query);   
+}
 
 ?>
 
@@ -61,18 +68,21 @@ $data = $blogModel->getBlogs();
                         <span class="text">All Avilable Blogs</span>
                     </div>
                     <div class="search">
+                        <form action="./blogs.php" method="get">
                         <div class="input">
-                            <input type="text" placeholder="Search blogs . . .">
-                            <button><i class="uil uil-search"></i></button>
+                            <input type="text" name="query" value="<?=$query?>" placeholder="Search blogs . . .">
+                            <button type="submit"><i class="uil uil-search"></i></button>
                         </div>
-                        <div>
+                        </form>
+                        <!-- More searchin tecning -->
+                        <!-- <div>
                             Short BY: <select name="Catagory" id="">
                                 <option value="">Newest</option>
                                 <option value="">Older</option>
                                 <option value="">Alphabet A-Z</option>
                                 <option value="">Alphabet Z-A</option>
                             </select>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="activity-data">
