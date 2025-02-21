@@ -83,7 +83,8 @@
                            ?>
                     <div class="single-services section-over1 text-center">
                         <div class="services-img">
-                            <img src="./assets/service_images/<?=  $data[$i]['service_image'];  ?>" alt="" />
+                        
+                            <img src="./assets/service_images/<?= $data[$i]['service_image'];  ?>" alt="" />
                             <div class="services-caption">
                                 <h3><?=  $data[$i]['service_name'];   ?></h3>
                                 <a href="service.php?service_id=<?= $data[$i]['service_id'];  ?>" class="btn btn3">view</a>
@@ -128,6 +129,8 @@
                                 </div>
                         </div>
                     </div> -->
+
+
                     <div class="single-services section-over1 text-center">
                         <div class="services-img">
                             <img src="assets/img/gallery/oth.png" alt="">
