@@ -62,11 +62,13 @@
                 <label for="service-img">Upload Image</label>
                 <input type="file" name="service_image" id="service-img" accept="image/*" required>
             </div><br>
-            <button type="submit" class="submit-btn">Submit</button>
+            <div style="display:flex; justify-content: space-between;">
+                <button type="submit" class="submit-btn">Update</button>
+                <button class="submit-btn" style="background-color: red" onclick="deleteBlog()">Delete</button>
+            </div>
             
         </form>
     </div>
-    <button class="delete-btn" onclick="deleteBlog()">Delete blog</button>
     </section>
     <script src="../assets/admin_js/script.js" defer></script>
 
