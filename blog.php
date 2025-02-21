@@ -190,7 +190,7 @@
                 </form>
               </aside>
 
-              <aside class="single_sidebar_widget popular_post_widget">
+              <!-- <aside class="single_sidebar_widget popular_post_widget">
                 <h3 class="widget_title" style="color: #2d2d2d;">Recent Post</h3>
                 <div class="media post_item">
                   <img src="./assets/img/post/post_1.png" alt="post">
@@ -228,7 +228,7 @@
                     <p>01 Hours ago</p>
                   </div>
                 </div>
-              </aside>
+              </aside> -->
 
             </div>
           </div>
