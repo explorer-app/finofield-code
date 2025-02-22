@@ -60,11 +60,11 @@
             </div>
             <div class="input-field">
                 <label for="service-img">Upload Image</label>
-                <input type="file" name="service_image" id="service-img" accept="image/*" required>
+                <input type="file" name="service_image" id="service-img" accept="image/*">
             </div><br>
             <div style="display:flex; justify-content: space-between;">
                 <button type="submit" class="submit-btn">Update</button>
-                <button class="submit-btn" style="background-color: red" onclick="deleteBlog()">Delete</button>
+                <a class="submit-btn" href="../controllers/ServiceController.php?service_id=<?=   $data['service_id'];   ?>" style="background-color: red">Delete</a>
             </div>
             
         </form>

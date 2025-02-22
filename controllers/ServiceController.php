@@ -9,7 +9,9 @@ $db = new DbConnection();
 $con = $db->getConnection();
 $serviceModel = new ServiceModel($con);
 
+if(isset($_GET['action'])) {
 $action = $_GET['action'];
+}
 
 if($action == "service_add" && $_SERVER['REQUEST_METHOD']) {
 
@@ -45,6 +47,16 @@ if($action == "service_add" && $_SERVER['REQUEST_METHOD']) {
     exit;
 
 
+   } else if(isset($_GET['service_id'])) {
+
+      $id = $_GET['service_id'];
+      $result = $serviceModel->deleteService($id);
+
+      if($result) {
+         header("location: ../admin/services.php?success=service delete successfully");
+      } else {
+         echo "something went wrong";
+      }
    }
 
 

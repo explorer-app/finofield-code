@@ -138,6 +138,16 @@ class ServiceModel {
 
         return $dataArray;
     }
+
+    public function deleteService($id) {
+          
+        $stmt = $this->con->prepare("delete from services where service_id = ?");
+        $stmt->bind_param("i",$id);
+
+        $result = $stmt->execute();
+
+        return $result;
+    }
 }
 
 
