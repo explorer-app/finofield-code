@@ -122,7 +122,7 @@
             </div>
             <!--Right Contents  -->
             <div class="about-img2">
-                <div class="info-man2">
+                <!-- <div class="info-man2">
                     <div class="head-cap2">
                         <img src="assets/img/icon/quality.svg" alt="">
                         <h3>900+</h3>
@@ -135,7 +135,7 @@
                         <h3>95%</h3>
                     </div>
                     <p>Interdum nulla, ut commodo<br> diam libero vitae erat.</p>
-                </div>
+                </div> -->
             </div>
         </div>
         <!-- About Area End-->
@@ -407,9 +407,8 @@
                             </div>
                         </div>
                         <div class="col-xl-4 col-lg-4 col-md-6">
-                            <a href="#" class="btn w-btn wantToWork-btn mr-20">Make an Appointment</a>
-                            <a href="#" class="btn2 w-btn wantToWork-btn"><i class="fas fa-phone"></i> (89) 673
-                                378-309</a>
+                            <a href="#" class="btn w-btn wantToWork-btn mr-20">Let's Connect</a>
+                            <a href="#" class="btn2 w-btn wantToWork-btn"><i class="fas fa-phone"></i> (+91) 99581 88067</a>
                         </div>
                     </div>
                 </div>

@@ -5820,6 +5820,10 @@ hr {
     outline: 0
 }
 
+.footer-wrapper {
+    background-color: rgb(242, 229, 232);
+}
+
 @media only screen and (min-width: 768px) and (max-width: 991px) {
     .footer-wrapper {
         padding: 0
@@ -5839,7 +5843,7 @@ hr {
 }
 
 .footer-area .footer-pera p {
-    color: #9DA4AB;
+    color: #1c1d1e;
     padding-right: 52px;
     font-size: 16px;
     margin-bottom: 50px;
@@ -5869,7 +5873,7 @@ hr {
 }
 
 .footer-area .footer-tittle h4 {
-    color: #fff;
+    color: #000000;
     font-size: 24px;
     margin-bottom: 40px;
     font-weight: 600
@@ -5887,7 +5891,7 @@ hr {
 }
 
 .footer-area .footer-tittle ul li a:hover {
-    color: #fff;
+    color: #000000;
     text-decoration: underline
 }
 
@@ -5954,7 +5958,7 @@ hr {
 }
 
 .footer-bottom-area .footer-copy-right p {
-    color: #fff;
+    color: #000000;
     font-weight: 400;
     font-size: 14px;
     line-height: 2;

@@ -47,7 +47,7 @@
                             <p data-animation="fadeInLeft" data-delay=".6s">Offers wide range of services especially to 
                             startups who is looking forward to doing business in India.</p>
                             <!-- Hero Btn -->
-                            <a href="#" class="btn" data-animation="fadeInLeft" data-delay=".9s">Explore Services</a>
+                            <a href="./services.php" class="btn" data-animation="fadeInLeft" data-delay=".9s">Explore Services</a>
                         </div>
                         <div class="hero-img">
                             <img src="assets/img/hero/h1_hero1.png" alt="" data-animation="fadeInRight"
@@ -57,11 +57,16 @@
                 </div>
             </div>
             <!-- Video icon -->
-            <div class="video-icon">
+            <!-- <div class="video-icon">
                 <a class="popup-video btn-icon" href="https://www.youtube.com/watch?v=up68UAfH0d0"><i
                         class="fas fa-play"></i></a>
-            </div>
+            </div> -->
         </div>
+        <div style="max-width: 100%; padding: 30px; display: flex; justify-content: center; align-items: center;">
+            <img src="./assets/img/hero/LCCI-Logo.png" alt="" 
+                style="max-width: 90%; height: auto; max-height: 200px;">
+        </div>
+
         <!-- slider Area End-->
         <!--? Services Area Start -->
         <section class="services-section section-padding30 fix">
@@ -71,7 +76,7 @@
                         <!-- Section Tittle -->
                         <div class="section-tittle text-center mb-70">
                             <span>Our Service</span>
-                            <h2>We bring ideas to life by combining years of experiences of our very talented team.</h2>
+                            <h2>We bring ideas by combining years of experiences of our team.</h2>
                         </div>
                     </div>
                 </div>
@@ -266,7 +271,7 @@
             </div>
             <!--Right Contents  -->
             <div class="about-img2">
-                <div class="info-man2">
+                <!-- <div class="info-man2">
                     <div class="head-cap2">
                         <img src="assets/img/icon/quality.svg" alt="">
                         <h3>900+</h3>
@@ -279,7 +284,7 @@
                         <h3>95%</h3>
                     </div>
                     <p>Transforming Businesses,<br> One Solution at a Time</p>
-                </div>
+                </div> -->
             </div>
         </div>
         <!-- About Area End-->
@@ -442,14 +447,14 @@
         <!-- Office environment  End-->
         <!--? Team Ara Start -->
 
-        <!-- <section class="team-area section-padding40">
+        <section class="team-area section-padding40">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="cl-xl-7 col-lg-8 col-md-10">
                         
                         <div class="section-tittle text-center mb-70">
-                            <span>Experts</span>
-                            <h2>Our consultents</h2>
+                            <!-- <span>Experts</span> -->
+                            <h2>Our Clients</h2>
                         </div>
                     </div>
                 </div>
@@ -460,17 +465,16 @@
                                 <img src="assets/img/gallery/team1.png" alt="">
                                 <div class="team-social">
                                     <ul>
-                                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-globe"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                        <li><a href="https://www.facebook.com/ExpoTOPACK/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                        <li><a href="https://x.com/topackexpo" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                                        <li><a href="https://topack.in/" target="_blank"><i class="fas fa-globe"></i></a></li>
+                                        <li><a href="https://www.instagram.com/topackexpo/" target="_blank"><i class="fab fa-instagram"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
-                            <div class="team-caption">
-                                <h3><a href="#">Jacika Chouhan</a></h3>
-                                <p>Senior business consultant</p>
-                            </div>
+                            <!-- <div class="team-caption">
+                                <h3><a href="#">Topack</a></h3>
+                            </div> -->
                             
                         </div>
                     </div>
@@ -480,17 +484,17 @@
                                 <img src="assets/img/gallery/team2.png" alt="">
                                 <div class="team-social">
                                     <ul>
-                                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-globe"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                        <!-- <li><a href="#"><i class="fab fa-facebook-f"></i></a></li> -->
+                                        <li><a href="https://www.linkedin.com/company/realitymine" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                                        <!-- <li><a href="#"><i class="fas fa-globe"></i></a></li> -->
+                                        <!-- <li><a href="#"><i class="fab fa-instagram"></i></a></li> -->
                                     </ul>
                                 </div>
                             </div>
-                            <div class="team-caption">
-                                <h3><a href="#">Dirluba Jahan</a></h3>
+                            <!-- <div class="team-caption">
+                                <h3><a href="#">Realty Mine</a></h3>
                                 <p>Senior business consultant</p>
-                            </div>
+                            </div> -->
                             
                         </div>
                     </div>
@@ -500,17 +504,17 @@
                                 <img src="assets/img/gallery/team3.png" alt="">
                                 <div class="team-social">
                                     <ul>
-                                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-globe"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                        <li><a href="http://www.facebook.com/CABI.development" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                        <li><a href="https://twitter.com/CABI_News" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                                        <li><a href="https://www.cabi.org/" target="_blank"><i class="fas fa-globe"></i></a></li>
+                                        <li><a href="https://www.linkedin.com/company/cabi" target="_blank"><i class="fab fa-linkedin"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
-                            <div class="team-caption">
+                            <!-- <div class="team-caption">
                                 <h3><a href="#">Michel Frade</a></h3>
                                 <p>Senior business consultant</p>
-                            </div>
+                            </div> -->
                             
                         </div>
                     </div>
@@ -520,23 +524,23 @@
                                 <img src="assets/img/gallery/team4.png" alt="">
                                 <div class="team-social">
                                     <ul>
-                                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-globe"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                        <li><a href="https://www.facebook.com/cmacgm" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                        <li><a href="https://x.com/cmacgm" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                                        <li><a href="https://www.cma-cgm.com/" target="_blank"><i class="fas fa-globe"></i></a></li>
+                                        <li><a href="https://www.linkedin.com/company/cma-cgm" target="_blank"><i class="fab fa-linkedin"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
-                            <div class="team-caption">
+                            <!-- <div class="team-caption">
                                 <h3><a href="#">Kalisha Milano</a></h3>
                                 <p>Senior business consultant</p>
-                            </div>
+                            </div> -->
                             
                         </div>
                     </div>
                 </div>
             </div>
-        </section> -->
+        </section>
 
         <!-- Team Ara End -->
         <!--? Want To work -->
@@ -551,8 +555,8 @@
                             </div>
                         </div>
                         <div class="col-xl-4 col-lg-4 col-md-6">
-                            <a href="#" class="btn w-btn wantToWork-btn mr-20">Make an Appointment</a>
-                            <a href="#" class="btn2 w-btn wantToWork-btn"><i class="fas fa-phone"></i> 0120 6052793</a>
+                            <a href="#" class="btn w-btn wantToWork-btn mr-20">Let's Connect</a>
+                            <a href="#" class="btn2 w-btn wantToWork-btn"><i class="fas fa-phone"></i> (+91) 99581 88067</a>
                         </div>
                     </div>
                 </div>

@@ -70,7 +70,7 @@
                         <!-- Section Tittle -->
                         <div class="section-tittle text-center mb-70">
                             <span>Our Service</span>
-                            <h2>We bring ideas to life by combining years of experiences of our very talented team.</h2>
+                            <h2>We bring ideas by combining years of experiences of our team.</h2>
                         </div>
                     </div>
                 </div>
