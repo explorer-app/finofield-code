@@ -1,5 +1,6 @@
 <?php
-
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 include("./database/DbConnection.php");
 include("./models/ServiceModel.php");               
 include("./models/BlogModel.php");               
@@ -9,7 +10,7 @@ $con = $db->getConnection();
 
 $serviceModel = new ServiceModel($con);
 $blogModel = new BlogModel($con);
-$data = $serviceModel->getLimitService();
+$data = $serviceModel->getAllServices();
 
 ?>
 
@@ -71,7 +72,7 @@ $data = $serviceModel->getLimitService();
                                 </div>
                                 <!-- left Btn -->
                                 <div class="header-right-btn f-right d-none d-lg-block  ml-30">
-                                    <a href="#" class="header-btn">Let's Connect<i class="fa fa-phone"></i></a>
+                                    <a href="#" class="header-btn">Let's Connect <i class="fa fa-phone"></i></a>
                                 </div>
                             </div>
                         </div>

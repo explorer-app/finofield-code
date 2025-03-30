@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Consulting | Template</title>
+    <title>Consulting | Services</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="manifest" href="site.webmanifest">
@@ -181,9 +181,8 @@
                             </div>
                         </div>
                         <div class="col-xl-4 col-lg-4 col-md-6">
-                            <a href="#" class="btn w-btn wantToWork-btn mr-20">Make an Appointment</a>
-                            <a href="#" class="btn2 w-btn wantToWork-btn"><i class="fas fa-phone"></i> (89) 673
-                                378-309</a>
+                            <a href="#" class="btn w-btn wantToWork-btn mr-20">Let's Connect</a>
+                            <a href="#" class="btn2 w-btn wantToWork-btn"><i class="fas fa-phone"></i> (+91) 99581 88067</a>
                         </div>
                     </div>
                 </div>

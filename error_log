@@ -1,0 +1,5 @@
+[29-Mar-2025 11:00:49 UTC] PHP Notice:  Undefined index: service_id in /home/finofiel/public_html/service.php on line 34
+[29-Mar-2025 11:00:49 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/finofiel/public_html/service.php on line 62
+[29-Mar-2025 11:00:49 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/finofiel/public_html/service.php on line 86
+[29-Mar-2025 11:00:49 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/finofiel/public_html/service.php on line 89
+[29-Mar-2025 11:00:49 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/finofiel/public_html/service.php on line 98

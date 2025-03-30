@@ -57,16 +57,16 @@
                 </div>
             </div>
             <!-- Video icon -->
-            <!-- <div class="video-icon">
-                <a class="popup-video btn-icon" href="https://www.youtube.com/watch?v=up68UAfH0d0"><i
-                        class="fas fa-play"></i></a>
-            </div> -->
+            <!--<div class="video-icon">-->
+            <!--    <a class="popup-video btn-icon" href="https://www.youtube.com/watch?v=up68UAfH0d0"><i-->
+            <!--            class="fas fa-play"></i></a>-->
+            <!--</div>-->
         </div>
+        
         <div style="max-width: 100%; padding: 30px; display: flex; justify-content: center; align-items: center;">
             <img src="./assets/img/hero/LCCI-Logo.png" alt="" 
                 style="max-width: 90%; height: auto; max-height: 200px;">
         </div>
-
         <!-- slider Area End-->
         <!--? Services Area Start -->
         <section class="services-section section-padding30 fix">
@@ -91,8 +91,14 @@
                         
                             <img src="./assets/service_images/<?= $data[$i]['service_image'];  ?>" alt="" />
                             <div class="services-caption">
-                                <h3><?=  $data[$i]['service_name'];   ?></h3>
-                                <a href="service.php?service_id=<?= $data[$i]['service_id'];  ?>" class="btn btn3">view</a>
+                                <h3>
+                                    <a href="service.php?service_id=<?= $data[$i]['service_id']; ?>">
+                                        <?= $data[$i]['service_name']; ?>
+                                    </a>
+                                </h3>
+                                <p><?= $data[$i]['service_brief_description']; ?></p>
+                                <a href="service.php?service_id=<?= $data[$i]['service_id']; ?>" class="btn btn3">view</a>
+
                             </div>
                         </div>
                     </div>
@@ -134,17 +140,6 @@
                                 </div>
                         </div>
                     </div> -->
-
-
-                    <div class="single-services section-over1 text-center">
-                        <div class="services-img">
-                            <img src="assets/img/gallery/oth.png" alt="">
-                            <div class="services-caption">
-                                <h3><a href="#">Others</a></h3>
-                                <a href="#" class="btn btn3">view</a>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
@@ -271,20 +266,20 @@
             </div>
             <!--Right Contents  -->
             <div class="about-img2">
-                <!-- <div class="info-man2">
-                    <div class="head-cap2">
-                        <img src="assets/img/icon/quality.svg" alt="">
-                        <h3>900+</h3>
-                    </div>
-                    <p>Interdum nulla, ut commodo<br>diam libero vitae erat.</p>
-                </div>
-                <div class="info-man2 info-man3">
-                    <div class="head-cap2">
-                        <img src="assets/img/icon/heart.svg" alt="">
-                        <h3>95%</h3>
-                    </div>
-                    <p>Transforming Businesses,<br> One Solution at a Time</p>
-                </div> -->
+                <!--<div class="info-man2">-->
+                <!--    <div class="head-cap2">-->
+                <!--        <img src="assets/img/icon/quality.svg" alt="">-->
+                <!--        <h3>900+</h3>-->
+                <!--    </div>-->
+                <!--    <p>Interdum nulla, ut commodo<br>diam libero vitae erat.</p>-->
+                <!--</div>-->
+                <!--<div class="info-man2 info-man3">-->
+                <!--    <div class="head-cap2">-->
+                <!--        <img src="assets/img/icon/heart.svg" alt="">-->
+                <!--        <h3>95%</h3>-->
+                <!--    </div>-->
+                <!--    <p>Transforming Businesses,<br> One Solution at a Time</p>-->
+                <!--</div>-->
             </div>
         </div>
         <!-- About Area End-->

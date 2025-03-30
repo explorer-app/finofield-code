@@ -4,6 +4,12 @@
 // ini_set('display_startup_errors', 1);
 // error_reporting(E_ALL);
 
+
+if(isset($_GET['message'])) {
+    $msg = $_GET['message'];
+    echo "<script>alert('$msg');  </script>";
+}
+
  ?>
 
 <!DOCTYPE html>
@@ -22,13 +28,14 @@
 <body>
     <?php 
         include("./header.php");
-        // include("../controllers/DatabaseController.php");
-        // include("../models/UserModel.php");
+        include("../database/DbConnection.php");
+        include("../models/AdminModel.php");
 
-        // $db = new DatabaseController();
-        // $con = $db->getConnection();
-        // $usermodel = new UserModel($con);
-        // $data = $usermodel->getUrl();
+        $db = new DbConnection();
+        $con = $db->getConnection();
+        $adminModel = new AdminModel($con);
+        $data = $adminModel->getUrl();
+       
         
     ?>
     <section class="panel setting">
@@ -54,22 +61,23 @@
                     <i class="uil uil-edit"></i>
                     <span class="text">Hi, <> Edit your company details</span>
                 </div>
-                <form class="edits" action="../controllers/AppController.php?action=setting" method="POST">
+
+                <form class="edits" action="../controllers/AdminController.php?action=setting" method="POST">
                     <div class="input">
                         <label for="">Campany facebook URL :</label>
-                        <input type="text" value='' name="facebook">
+                        <input type="text" value="<?= $data['facebook_link']; ?>" name="facebook">
                     </div>
                     <div class="input">
                         <label for="">Campany LinkedIn URL :</label>
-                        <input type="text" value="" name="linkedin">
+                        <input type="text" value="<?=  $data['linkedin_link'];   ?>" name="linkedin">
                     </div>
                     <div class="input">
                         <label for="">Campany Twitter URL :</label>
-                        <input type="text" value="" name="twitter">
+                        <input type="text" value="<?=   $data['twitter_link'];   ?>" name="twitter">
                     </div>
                     <div class="input">
                         <label for="">Campany Whatapp Number :</label>
-                        <input type="text" value="" name="whatsapp">
+                        <input type="text" value="<?=   $data['whatsapp_link'];  ?>" name="whatsapp">
                     </div>
                     <div class="input" style="flex-direction: column; align-items: center; gap: 30px;">
                         <button type="submit">Submit</button>

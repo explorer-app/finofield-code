@@ -122,20 +122,20 @@
             </div>
             <!--Right Contents  -->
             <div class="about-img2">
-                <!-- <div class="info-man2">
-                    <div class="head-cap2">
-                        <img src="assets/img/icon/quality.svg" alt="">
-                        <h3>900+</h3>
-                    </div>
-                    <p>Interdum nulla, ut commodo<br>diam libero vitae erat.</p>
-                </div>
-                <div class="info-man2 info-man3">
-                    <div class="head-cap2">
-                        <img src="assets/img/icon/heart.svg" alt="">
-                        <h3>95%</h3>
-                    </div>
-                    <p>Interdum nulla, ut commodo<br> diam libero vitae erat.</p>
-                </div> -->
+                <!--<div class="info-man2">-->
+                <!--    <div class="head-cap2">-->
+                <!--        <img src="assets/img/icon/quality.svg" alt="">-->
+                <!--        <h3>900+</h3>-->
+                <!--    </div>-->
+                <!--    <p>Interdum nulla, ut commodo<br>diam libero vitae erat.</p>-->
+                <!--</div>-->
+                <!--<div class="info-man2 info-man3">-->
+                <!--    <div class="head-cap2">-->
+                <!--        <img src="assets/img/icon/heart.svg" alt="">-->
+                <!--        <h3>95%</h3>-->
+                <!--    </div>-->
+                <!--    <p>Interdum nulla, ut commodo<br> diam libero vitae erat.</p>-->
+                <!--</div>-->
             </div>
         </div>
         <!-- About Area End-->

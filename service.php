@@ -39,7 +39,7 @@
 
      include('./components/header.php');
 
-     $data = $serviceModel->getServiceById($id);
+     $fdata = $serviceModel->getServiceById($id);
 ?>
      
     
@@ -59,7 +59,7 @@
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
                                     <li class="breadcrumb-item"><a href="#">Services</a></li>
-                                    <li class="breadcrumb-item"><a href="#">Service</a></li>
+                                    <li class="breadcrumb-item"><a href="#"><?=  $fdata['service_name'];  ?></a></li>
                                 </ol>
                             </nav>
                         </div>
@@ -72,36 +72,39 @@
                     </div>
                 </div>
             </div>
-
         </div>
 
         <!-- About Area End-->
-        <!--! About Area Start 02-->
-        <div class="about-area2">
-            <!-- left Contents -->
-            <div class="about-details2">
-                <div class="right-caption">
-                    <!-- Section Tittle -->
-                    <div class="section-tittle mb-50">
-                        <!-- <h2>Our<br>Philosophy</h2> -->
+        <div class="about-area py-5" style="padding: 10px 30px;">
+            <div class="container">
+                <div class="row align-items-center">
+                    <!-- Left Content (Text) -->
+                    <div class="col-12 col-md-6">
+                        <div class="about-details2">
+                            <div class="right-caption">
+                                <h1 class="text-dark font-weight-bold" style="font-size: 30px; word-wrap: break-word;">
+                                    <?= $fdata['service_name']; ?>
+                                </h1>
+                                <p class="mt-3" style="font-size: 18px; line-height: 1.6;">
+                                    <?= $fdata['service_description']; ?>
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                    <br>
-                    <div class="about-more">
-                        <p><?=  $data['service_brief_description'];  ?></p>
-                        <p class="pera-bottom"><?=  $data['service_description'];   ?></p>
-
+        
+                    <!-- Right Content (Image) -->
+                    <div class="col-12 col-md-6 text-center mt-4 mt-md-0">
+                        <div class="image">
+                            <img src="./assets/service_images/<?= $fdata['service_image']; ?>" 
+                                 alt="Service Image" 
+                                 class="img-fluid w-100" 
+                                 style="max-width: 500px; height: auto;">
+                        </div>
                     </div>
-                </div>
-            </div>
-            <br>
-            <!--Right Contents  -->
-            <div class="col-12 col-md-6 text-center">
-                <div class="image">
-                    <img src="./assets/service_images/<?=  $data['service_image'];  ?>" alt="" class="img-fluid w-100">
                 </div>
             </div>
         </div>
-        
+
         <section class="wantToWork-area section-bg2" data-background="assets/img/gallery/section_bg01.png">
             <div class="container">
                 <div class="wants-wrapper w-padding2">
@@ -121,7 +124,6 @@
                 </div>
             </div>
         </section>
-        <!-- Want To work End -->
     </main>
 
     <?php include('./components/footer.php')?>

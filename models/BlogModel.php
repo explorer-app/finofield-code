@@ -1,73 +1,84 @@
 <?php
 
- class BlogModel {
+class BlogModel {
 
     private $con;
 
     public function __construct($con) {
-             $this->con = $con;
+        $this->con = $con;
     }
 
-   public function getBlogs() {
+    public function getBlogs() {
+        $stmt = $this->con->prepare("SELECT * FROM blogs");
+        $stmt->execute();
 
-       $stmt = $this->con->prepare("select * from blogs");
-       $stmt->execute();
-
-       $result = $stmt->get_result();
-       $dataArray = array();
-
-       if($result->num_rows > 0) {
-        while($row = $result->fetch_assoc()) {
-          $dataArray[] = $row;
+        $meta = $stmt->result_metadata();
+        $fields = [];
+        $row = [];
+        while ($field = $meta->fetch_field()) {
+            $fields[$field->name] = null;
+            $row[] = &$fields[$field->name];
         }
-       }
 
-       $stmt->close();
+        call_user_func_array([$stmt, 'bind_result'], $row);
 
-       return $dataArray;
-   }
+        $dataArray = [];
+        while ($stmt->fetch()) {
+            $dataArray[] = array_map(fn($val) => $val, $fields);
+        }
 
-   public function getBlogsByName($name) {
+        $stmt->close();
+        return $dataArray;
+    }
+
+    public function getBlogsByName($name) {
         $name = "%" . $name . "%"; // Add wildcards for the LIKE query
         $stmt = $this->con->prepare("SELECT * FROM blogs WHERE blog_title LIKE ?");
         $stmt->bind_param("s", $name);
         $stmt->execute();
 
-        $result = $stmt->get_result();
-        $dataArray = array();
+        $meta = $stmt->result_metadata();
+        $fields = [];
+        $row = [];
+        while ($field = $meta->fetch_field()) {
+            $fields[$field->name] = null;
+            $row[] = &$fields[$field->name];
+        }
 
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                $dataArray[] = $row;
-            }
+        call_user_func_array([$stmt, 'bind_result'], $row);
+
+        $dataArray = [];
+        while ($stmt->fetch()) {
+            $dataArray[] = array_map(fn($val) => $val, $fields);
         }
 
         $stmt->close();
-
         return $dataArray;
     }
 
-   public function getBlogById($id) {
-    $stmt = $this->con->prepare("SELECT * FROM blogs WHERE blog_id = ?");
-    $stmt->bind_param("i", $id);
-    $stmt->execute();
-    
-    // Fetch the result
-    $result = $stmt->get_result();
-    
-    // Check if a row exists and fetch it as an associative array
-    if ($result->num_rows > 0) {
-        return $result->fetch_assoc(); // Return the single blog row
-    } else {
-        return null; // Return null if no blog is found
+    public function getBlogById($id) {
+        $stmt = $this->con->prepare("SELECT * FROM blogs WHERE blog_id = ?");
+        $stmt->bind_param("i", $id);
+        $stmt->execute();
+
+        $meta = $stmt->result_metadata();
+        $fields = [];
+        $row = [];
+        while ($field = $meta->fetch_field()) {
+            $fields[$field->name] = null;
+            $row[] = &$fields[$field->name];
+        }
+
+        call_user_func_array([$stmt, 'bind_result'], $row);
+
+        $data = null;
+        if ($stmt->fetch()) {
+            $data = array_map(fn($val) => $val, $fields);
+        }
+
+        $stmt->close();
+        return $data;
     }
 }
-
-
-
-   
- }
-
-
 
 ?>

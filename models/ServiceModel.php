@@ -9,11 +9,9 @@ class ServiceModel {
         $this->con = $con;
     }
 
-
     public function addService($data) {
 
         $uploadDir = "../assets/service_images/";
-
 
         $image = $data['image'];
 
@@ -42,42 +40,56 @@ class ServiceModel {
         $stmt->close();
     }
 
-
     public function getAllServices() {
-
-        
         $stmt = $this->con->prepare("select * from services");
         $stmt->execute();
 
-        $result = $stmt->get_result();
-        $dataArray = array();
+        $meta = $stmt->result_metadata();
+        $fields = [];
+        $row = [];
+        while ($field = $meta->fetch_field()) {
+            $fields[$field->name] = null;
+            $row[] = &$fields[$field->name];
+        }
 
-        if($result->num_rows > 0) {
-            while($row = $result->fetch_assoc()) {
-                $dataArray[] = $row;
-            }
+        call_user_func_array([$stmt, 'bind_result'], $row);
+
+        $dataArray = [];
+        while ($stmt->fetch()) {
+            $dataArray[] = array_map(fn($val) => $val, $fields);
         }
 
         $stmt->close();
-
         return $dataArray;
     }
 
     public function getServiceById($id) {
-
         $stmt = $this->con->prepare("select * from services where service_id = ?");
         $stmt->bind_param("i",$id);
         $stmt->execute();
 
-        $res = $stmt->get_result();
+        $meta = $stmt->result_metadata();
+        $fields = [];
+        $row = [];
+        while ($field = $meta->fetch_field()) {
+            $fields[$field->name] = null;
+            $row[] = &$fields[$field->name];
+        }
 
-        return $res->fetch_assoc();
+        call_user_func_array([$stmt, 'bind_result'], $row);
+
+        $data = null;
+        if ($stmt->fetch()) {
+            $data = array_map(fn($val) => $val, $fields);
+        }
+
+        $stmt->close();
+        return $data;
     }
 
     public function updateService($data) {
 
         $uploadDir = "../assets/service_images/";
-
 
         $image = $data['image'];
 
@@ -97,50 +109,51 @@ class ServiceModel {
                                     service_image = ? 
                                 WHERE service_id = ?");
 
-    if(!$stmt) {
-        die("Error in statement preparation: " . $this->con->error);
-    }
+        if(!$stmt) {
+            die("Error in statement preparation: " . $this->con->error);
+        }
 
-    // Correct parameter binding
-    $stmt->bind_param("ssssi", 
-        $data['name'], 
-        $data['detailed_description'], 
-        $data['brief_description'], 
-        $imageName, 
-        $data['service_id']
-    );
+        $stmt->bind_param("ssssi", 
+            $data['name'], 
+            $data['detailed_description'], 
+            $data['brief_description'], 
+            $imageName, 
+            $data['service_id']
+        );
 
-    $stmt->execute();
-
-    if($stmt->error) {
-        die('Error in statement execution: ' . $stmt->error);
-    }
-
-    $stmt->close();
-    }
-
-
-    public function getLimitService() {
-
-        $stmt = $this->con->prepare("select * from services limit 5");
         $stmt->execute();
 
-        $result = $stmt->get_result();
-        $dataArray = array();
-
-        if($result->num_rows > 0) {
-            while($row = $result->fetch_assoc()) {
-                $dataArray[] = $row;
-            }
+        if($stmt->error) {
+            die('Error in statement execution: ' . $stmt->error);
         }
 
         $stmt->close();
+    }
 
+    public function getLimitService() {
+        $stmt = $this->con->prepare("SELECT * FROM services LIMIT 5");
+        $stmt->execute();
+
+        $meta = $stmt->result_metadata();
+        $fields = [];
+        $row = [];
+        while ($field = $meta->fetch_field()) {
+            $fields[$field->name] = null;
+            $row[] = &$fields[$field->name];
+        }
+
+        call_user_func_array([$stmt, 'bind_result'], $row);
+
+        $dataArray = [];
+        while ($stmt->fetch()) {
+            $dataArray[] = array_map(fn($val) => $val, $fields);
+        }
+
+        $stmt->close();
         return $dataArray;
     }
 
     public function deleteService($id) {
-          
         $stmt = $this->con->prepare("delete from services where service_id = ?");
         $stmt->bind_param("i",$id);
 
@@ -149,8 +162,5 @@ class ServiceModel {
         return $result;
     }
 }
-
-
-
 
 ?>

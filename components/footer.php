@@ -21,8 +21,8 @@
                                     <!-- social -->
                                     <div class="footer-social">
                                         <a href="#"><i class="fab fa-linkedin"></i></a>
-                                        <!-- <a href="https://bit.ly/sai4ull"><i class="fab fa-facebook-f"></i></a>
-                                        <a href="#"><i class="fab fa-pinterest-p"></i></a> -->
+                                        <!--<a href="https://bit.ly/sai4ull"><i class="fab fa-facebook-f"></i></a>-->
+                                        <!--<a href="#"><i class="fab fa-pinterest-p"></i></a>-->
                                     </div>
                                 </div>
                             </div>
@@ -30,14 +30,14 @@
                         <div class="col-xl-2 col-lg-4 col-md-4 col-sm-6">
                             <div class="single-footer-caption mb-50">
                                 <div class="footer-tittle">
-                                    <h4>Our solutions</h4>
+                                    <h4>Our Services</h4>
                                     <ul>
-                                        <li><a href="#">Setting up Legal Entity</a></li>
-                                        <li><a href="#">Tax & Regulatory Advisory & Compliance</a></li>
-                                        <li><a href="#">Accounting/book-keeping & Financial reporting</a></li>
-                                        <li><a href="#">IFRS conversion</a></li>
-                                        <li><a href="#">Representation before various regulators </a></li>
-                                        <li><a href="#">Others</a></li>
+                                        <?php
+
+                                            for($i=0;$i<sizeof($data);$i++) {
+                                            ?>
+                                                <li><a href="service.php?service_id=<?=  $data[$i]['service_id'];  ?>">  <?= $data[$i]['service_name'];?> </a></li>
+                                        <?php  } ?>
                                     </ul>
                                 </div>
                             </div>
@@ -47,11 +47,11 @@
                                 <div class="footer-tittle">
                                     <h4>Company</h4>
                                     <ul>
-                                        <li><a href="#">About</a></li>
-                                        <li><a href="#">Review</a></li>
-                                        <li><a href="#">Insights</a></li>
-                                        <li><a href="#">Programing</a></li>
-                                        <li><a href="#">Carrier</a></li>
+                                        <li><a href="index.php">Home</a></li>
+                                        <li><a href="about.php">About</a></li>
+                                        <li><a href="services.php">Services</a>
+                                        <li><a href="blogs.php">Blogs</a></li>
+                                        <li><a href="contact.php">Contact</a></li>
                                     </ul>
                                 </div>
                             </div>
