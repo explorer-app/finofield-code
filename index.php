@@ -550,8 +550,8 @@
                             </div>
                         </div>
                         <div class="col-xl-4 col-lg-4 col-md-6">
-                            <a href="#" class="btn w-btn wantToWork-btn mr-20">Let's Connect</a>
-                            <a href="#" class="btn2 w-btn wantToWork-btn"><i class="fas fa-phone"></i> (+91) 99581 88067</a>
+                            <a onclick=whatsapp() target="_blank" class="btn w-btn wantToWork-btn mr-20">Let's Connect</a>
+                            <a onclick=whatsapp() target="_blank" class="btn2 w-btn wantToWork-btn"><i class="fas fa-phone"></i> (+91) 99581 88067</a>
                         </div>
                     </div>
                 </div>

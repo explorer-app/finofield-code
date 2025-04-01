@@ -83,7 +83,7 @@ if($action === 'admin-login'  && $_SERVER['REQUEST_METHOD'] === 'POST') {
         $facebook = $_POST['facebook'];
         $linkedin = $_POST['linkedin'];
         $twitter = $_POST['twitter'];
-        $whatsaap = $_POST['whatsapp'];
+        $whatsapp = $_POST['whatsapp'];
 
         if(!$facebook || !$linkedin || !$twitter || !$whatsaap) {
             header("location: ../admin/setting.php?error=please fil all the fields");
@@ -91,7 +91,7 @@ if($action === 'admin-login'  && $_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
 
-        $result = $adminModel->addSettings(['facebook' => $facebook, 'linkedin' => $linkedin, 'twitter' => $linkedin, 'whatsapp' => $whatsaap, 'id' => 2]);
+        $result = $adminModel->addSettings(['facebook' => $facebook, 'linkedin' => $linkedin, 'twitter' => $linkedin, 'whatsapp' => $whatsapp, 'id' => 1]);
 
         if($result) {
             header("location: ../admin/setting.php?message=data save successfully");

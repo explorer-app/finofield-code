@@ -1,4 +1,33 @@
 <footer>
+    <script>
+        function detectmob() {
+            return navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/BlackBerry/i) || navigator.userAgent.match(/Windows Phone/i) ? true : false
+        }
+        function whatsapp() {
+            let mobile = localStorage.getItem("whatsapp_link"); // Retrieve from localStorage
+
+            if (!mobile) {
+            alert("WhatsApp number not found! Please refresh the page.");
+            return;
+            }
+
+            let url = detectmob() ? "https://api.whatsapp.com/send" : "https://web.whatsapp.com/send";
+            let w_m = `${url}?phone=${mobile}&text=*Hi, FinoField!*`;
+            window.open(w_m, "_blank").focus();
+        }
+        function setLinkedInLink() {
+            let linkedin = localStorage.getItem("linkedin_link");
+
+            if (linkedin) {
+            document.getElementById("linkedin-link").href = linkedin;
+            } else {
+            console.warn("LinkedIn link not found in localStorage!");
+            }
+        }
+
+        // Run on page load
+        document.addEventListener("DOMContentLoaded", setLinkedInLink);
+    </script>
         <div class="footer-wrapper section-bg2 pl-100" >
             <!-- Footer Start-->
             <div class="footer-area footer-padding">
@@ -20,7 +49,9 @@
                                     </div>
                                     <!-- social -->
                                     <div class="footer-social">
-                                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                                    <a id="linkedin-link" href="#" target="_blank">
+                                        <i class="fab fa-linkedin"></i>
+                                    </a>
                                         <!--<a href="https://bit.ly/sai4ull"><i class="fab fa-facebook-f"></i></a>-->
                                         <!--<a href="#"><i class="fab fa-pinterest-p"></i></a>-->
                                     </div>

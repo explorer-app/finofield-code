@@ -59,7 +59,7 @@ if(isset($_GET['message'])) {
             <div class="activity">
                 <div class="title">
                     <i class="uil uil-edit"></i>
-                    <span class="text">Hi, <> Edit your company details</span>
+                    <span class="text">Hi, Edit your company Social Media Urls</span>
                 </div>
 
                 <form class="edits" action="../controllers/AdminController.php?action=setting" method="POST">

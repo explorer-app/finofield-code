@@ -24,13 +24,13 @@ class ServiceModel {
             }
         }
 
-        $stmt = $this->con->prepare("insert into services(service_name, service_description, service_brief_description, service_image) values (?,?,?,?)");
+        $stmt = $this->con->prepare("insert into services(service_name, service_description, service_brief_description, service_image, data_link) values (?,?,?,?,?)");
 
         if(!$stmt) {
             die("Error in statement preparation: " .$this->con->error);
         }
 
-        $stmt->bind_param("ssss",$data['name'], $data['detailed_description'], $data['brief_description'], $imageName);
+        $stmt->bind_param("sssss",$data['name'], $data['detailed_description'], $data['brief_description'], $imageName, $data['data_link']);
         $stmt->execute();
 
         if($stmt->error) {
@@ -106,7 +106,8 @@ class ServiceModel {
                                 SET service_name = ?, 
                                     service_description = ?, 
                                     service_brief_description = ?, 
-                                    service_image = ? 
+                                    service_image = ?,
+                                    data_link = ?,
                                 WHERE service_id = ?");
 
         if(!$stmt) {
@@ -118,7 +119,8 @@ class ServiceModel {
             $data['detailed_description'], 
             $data['brief_description'], 
             $imageName, 
-            $data['service_id']
+            $data['service_id'],
+            $data['data_link']
         );
 
         $stmt->execute();

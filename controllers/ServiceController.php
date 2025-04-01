@@ -18,12 +18,10 @@ if($action == "service_add" && $_SERVER['REQUEST_METHOD']) {
         $service_name = $_POST['service_name'];
         $brief_description = $_POST['brief_description'];
         $detailed_description = $_POST['detailed_description'];
-
-        echo $brief_description;
-        echo $service_name;
+        $data_link = $_POST['data_link'];
         $service_image = $_FILES['service_image'];
 
-        $data = ['name' => $service_name, 'brief_description' =>  $brief_description, 'detailed_description' => $detailed_description, 'image' => $service_image];
+        $data = ['name' => $service_name, 'brief_description' =>  $brief_description, 'detailed_description' => $detailed_description, 'image' => $service_image, 'data_link' => $data_link];
 
         $result = $serviceModel->addService($data);
 
@@ -38,8 +36,9 @@ if($action == "service_add" && $_SERVER['REQUEST_METHOD']) {
       $detailed_description = $_POST['detailed_description'];
       $service_image = $_FILES['service_image'];
       $service_id = $_POST['service_id'];
+      $data_link = $_POST['data_link'];
 
-      $data = ['service_id' => $service_id, 'name' => $service_name, 'brief_description' => $brief_description, 'detailed_description' => $detailed_description, 'image' => $service_image];
+      $data = ['service_id' => $service_id, 'name' => $service_name, 'brief_description' => $brief_description, 'detailed_description' => $detailed_description, 'image' => $service_image, 'data_link' => $data_link];
 
       $result = $serviceModel->updateService($data);
 

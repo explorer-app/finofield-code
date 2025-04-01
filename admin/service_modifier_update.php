@@ -59,6 +59,10 @@
                 <textarea id="detailed-desc" name="detailed_description" rows="7" placeholder="Enter detailed description" required><?= $data['service_description'];   ?></textarea>
             </div>
             <div class="input-field">
+                <label for="data-link">Enter Related Docs Link</label>
+                <input type="link" name="data_link" value="<?= $data['data_link']?>"></textarea>
+            </div>
+            <div class="input-field">
                 <label for="service-img">Upload Image</label>
                 <input type="file" name="service_image" id="service-img" accept="image/*">
             </div><br>
