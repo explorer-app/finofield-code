@@ -107,20 +107,20 @@ class ServiceModel {
                                     service_description = ?, 
                                     service_brief_description = ?, 
                                     service_image = ?,
-                                    data_link = ?,
+                                    data_link = ?
                                 WHERE service_id = ?");
 
         if(!$stmt) {
             die("Error in statement preparation: " . $this->con->error);
         }
 
-        $stmt->bind_param("ssssi", 
+        $stmt->bind_param("sssssi", 
             $data['name'], 
             $data['detailed_description'], 
             $data['brief_description'], 
             $imageName, 
-            $data['service_id'],
-            $data['data_link']
+            $data['data_link'],
+            $data['service_id']
         );
 
         $stmt->execute();
